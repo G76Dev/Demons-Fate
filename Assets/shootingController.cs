@@ -9,7 +9,9 @@ public class shootingController : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
 
-    [SerializeField] float bulletForce = 29f;
+    [SerializeField] private float bulletForce = 29f;
+    private bool canShoot;
+    [SerializeField] private float shootCooldown = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,7 @@ public class shootingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire2"))
         {
             Shoot();
         }
@@ -28,9 +30,17 @@ public class shootingController : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab,firePoint.position, firePoint.rotation);
-        Rigidbody2D rb2d = bullet.GetComponent<Rigidbody2D>();
-        rb2d.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        if (canShoot)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody2D rb2d = bullet.GetComponent<Rigidbody2D>();
+            rb2d.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            canShoot = false;
+            //StartCoroutine
+        } else
+        {
+            //do nothing
+        }
 
     }
 }

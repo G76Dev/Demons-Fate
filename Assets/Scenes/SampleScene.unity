@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 737164885}
   - component: {fileID: 737164889}
   - component: {fileID: 737164888}
+  - component: {fileID: 737164890}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -363,6 +364,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &737164890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737164884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2758eabe8dd57894eba69a022000ee6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1656728523}
+  bulletPrefab: {fileID: 7776528486151003682, guid: 86e7ab49a6370324a8c5113324b80938,
+    type: 3}
+  bulletForce: 29
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,33 +479,12 @@ MonoBehaviour:
   target: {fileID: 737164887}
   offsetSpeed: 0.125
   offset: {x: 0, y: 0, z: -10}
---- !u!1 &1656728522 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4400055121182303669, guid: c931845c60eb8704c99708caca28c217,
-    type: 3}
-  m_PrefabInstance: {fileID: 4400055119543668351}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1656728523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4400055121182303668, guid: c931845c60eb8704c99708caca28c217,
     type: 3}
   m_PrefabInstance: {fileID: 4400055119543668351}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1656728524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656728522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2758eabe8dd57894eba69a022000ee6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-  bulletForce: 29
 --- !u!1 &2064231996
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,5 +660,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: weapon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1656728524, guid: c931845c60eb8704c99708caca28c217, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c931845c60eb8704c99708caca28c217, type: 3}
