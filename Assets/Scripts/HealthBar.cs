@@ -41,7 +41,8 @@ public class HealthBar : MonoBehaviour
 
     IEnumerator test()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         changeHealth(-20);
+        StartCoroutine(test());
     }
 }

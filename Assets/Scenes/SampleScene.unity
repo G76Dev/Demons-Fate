@@ -120,6 +120,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &686258769 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1779911745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +542,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1779911745
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2064231998}
+    m_Modifications:
+    - target: {fileID: 8546073932184214381, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 025552300ebcbf84f84c75d6996effd8, type: 3}
 --- !u!1 &2064231996
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +623,7 @@ GameObject:
   - component: {fileID: 2064231997}
   - component: {fileID: 2064231999}
   m_Layer: 0
-  m_Name: Obstacle
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -610,13 +685,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064231996}
-  m_LocalRotation: {x: 0, y: 0, z: -0.28326216, w: 0.95904255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.083, y: 2.645, z: 0}
   m_LocalScale: {x: 2.586, y: 2.469, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 686258769}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -32.91}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2064231999
 BoxCollider2D:
   m_ObjectHideFlags: 0
