@@ -35,10 +35,8 @@ public class ShootingEnemyIA : MonoBehaviour
 
         if (shootingTimer >= shootingTime)
         {
-            Debug.Log("Dentro primer if");
             if ((distance.magnitude >0 && distance.magnitude <= maximunShootingDistance) || (distance.magnitude <= 0 && distance.magnitude >= -maximunShootingDistance))
             {
-                Debug.Log("Dentro segundo if");
                        
                 GameObject bulletIn = Instantiate(bullet);
 
@@ -51,20 +49,7 @@ public class ShootingEnemyIA : MonoBehaviour
             }
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, distance, distance.magnitude);
-        if (hit.collider != null)
-        {
-            if (hit.collider.CompareTag("Player"))
-            {
-                detected = true;
-            }
-            else
-            {
-                detected = false;
-            }
-        }
-
-        if (distance.magnitude <= 0 && distance.magnitude <= -maximunDistance-1 && distance.magnitude <= detectDistance && detected) //Si el jugador está en el rango de vision del enemigo, el enemigo le persigue
+        if (distance.magnitude <= 0 && distance.magnitude <= -maximunDistance-1 && distance.magnitude >= -detectDistance && detected) //Si el jugador está en el rango de vision del enemigo, el enemigo le persigue
         {
             GetComponent<Rigidbody2D>().velocity = direction * speed;
         }
@@ -89,6 +74,17 @@ public class ShootingEnemyIA : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, distance, distance.magnitude);
+        if (hit.collider != null)
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                detected = true;
+            }
+            else
+            {
+                detected = false;
+            }
+        }
     }
 }
