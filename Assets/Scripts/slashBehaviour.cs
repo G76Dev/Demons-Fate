@@ -6,6 +6,7 @@ public class slashBehaviour : MonoBehaviour
 {
     private Animator anim;
 
+    [SerializeField] int damage = 30;
 
     private void Start()
     {
@@ -25,5 +26,14 @@ public class slashBehaviour : MonoBehaviour
     {
         return anim.GetCurrentAnimatorStateInfo(0).length >
                anim.GetCurrentAnimatorStateInfo(0).normalizedTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyGenericController>().takeDamage(damage);
+
+        }
     }
 }

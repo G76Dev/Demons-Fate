@@ -11,6 +11,7 @@ public class ShootingEnemyIA : MonoBehaviour
     public float shootingTime;
     public float bulletSpeed;
 
+
     private float shootingTimer;
 
     public GameObject bullet;
@@ -23,6 +24,7 @@ public class ShootingEnemyIA : MonoBehaviour
     {
         playerReference = GameObject.Find("Player");
     }
+
 
     // Update is called once per frame
     void Update()

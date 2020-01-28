@@ -4,27 +4,38 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    private int maxHealth = 100;
-    private int health = 100;
+    public int health = 100;
+    private int currentHealth;
     [SerializeField] Transform bar;
     [SerializeField] GameObject floatingText;
 
+    private void Start()
+    {
+        currentHealth = health;
+        transform.localScale = new Vector3(health / 100, transform.localScale.y, transform.localScale.z);
+    }
+
     void initHealth(int mH)
     {
-        maxHealth = Mathf.Max(mH, 0);
-        health = maxHealth;
-        transform.localScale = new Vector3(maxHealth / 100, transform.localScale.y, transform.localScale.z);
+        health = Mathf.Max(mH, 0);
+        currentHealth = health;
+        transform.localScale = new Vector3(health / 100, transform.localScale.y, transform.localScale.z);
+    }
+
+    public int getCurrentHealth()
+    {
+        return currentHealth;
     }
 
     void setHealth(int h)
     {
-        health = Mathf.Clamp(h, 0, maxHealth);
-        adjustBar(health, maxHealth);
+        currentHealth = Mathf.Clamp(h, 0, health);
+        adjustBar(currentHealth, health);
     }
 
-    void changeHealth(int h)
+    public void changeHealth(int h)
     {
-        setHealth(health + h);
+        setHealth(currentHealth + h);
         var hp = Instantiate(floatingText, transform.position, transform.rotation, transform);
         hp.GetComponent<TextMesh>().text = h.ToString();
     }

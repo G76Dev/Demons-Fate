@@ -10,6 +10,7 @@ public class MeleeEnemyIA : MonoBehaviour
     public float maximunDistance;
     public float attackTime;
 
+
     private float timerPush = 0;
     private float attackTimer = 0;
     private Vector3 distance;
@@ -27,6 +28,7 @@ public class MeleeEnemyIA : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerReference = GameObject.Find("Player");
     }
+
 
     // Update is called once per frame
     void Update()
