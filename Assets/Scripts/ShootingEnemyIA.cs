@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootingEnemyIA : MonoBehaviour
 {
     public float speed;
+    public float detectDistance;
     public float maximunDistance;
     public float maximunShootingDistance;
     public float shootingTime;
@@ -15,6 +16,7 @@ public class ShootingEnemyIA : MonoBehaviour
     public GameObject bullet;
     private GameObject playerReference;
     private Vector3 direction, distance;
+    private bool detected;
 
     // Start is called before the first frame update
     void Start()
@@ -49,28 +51,44 @@ public class ShootingEnemyIA : MonoBehaviour
             }
         }
 
-        if (distance.magnitude <= 0 && distance.magnitude <= -maximunDistance-1)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, distance, distance.magnitude);
+        if (hit.collider != null)
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                detected = true;
+            }
+            else
+            {
+                detected = false;
+            }
+        }
+
+        if (distance.magnitude <= 0 && distance.magnitude <= -maximunDistance-1 && distance.magnitude <= detectDistance && detected) //Si el jugador está en el rango de vision del enemigo, el enemigo le persigue
         {
             GetComponent<Rigidbody2D>().velocity = direction * speed;
         }
-        else if (distance.magnitude > 0 && distance.magnitude >= maximunDistance+1)
+        else if (distance.magnitude > 0 && distance.magnitude >= maximunDistance+1 && distance.magnitude <= detectDistance && detected) //Si el jugador está en el rango de vision del enemigo,
         {
             GetComponent<Rigidbody2D>().velocity = direction * speed;
         }
-        else if(distance.magnitude > 0 && distance.magnitude <= maximunDistance)
+        else if(distance.magnitude > 0 && distance.magnitude <= maximunDistance && detected) //Si el jugador está en el rango de visión del enemigo, y demasiado cerca, el enemigo se aleja.
         {
             GetComponent<Rigidbody2D>().velocity = -direction * speed;
         }
-        else if (distance.magnitude < 0 && distance.magnitude >= maximunDistance)
+        else if (distance.magnitude < 0 && distance.magnitude >= maximunDistance && detected) //Si el jugador está en el rango de visión del enemigo, y demasiado cerca, el enemigo se aleja.
         {
             GetComponent<Rigidbody2D>().velocity = -direction * speed;
         }
-        else
+        else //Si no se detecta al jugador, el enemigo se queda quieto.
         {
             GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0);
         }
 
+    }
 
-
+    private void FixedUpdate()
+    {
+        
     }
 }
