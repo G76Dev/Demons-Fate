@@ -59,7 +59,7 @@ public class ShootingEnemyIA : MonoBehaviour
         }
         else if (distance.magnitude > 0 && distance.magnitude >= maximunDistance+1 && distance.magnitude <= detectDistance && detected) //Si el jugador está en el rango de vision del enemigo,
         {
-            Debug.Log("Cambio de velocidad");
+            //Debug.Log("Cambio de velocidad");
             GetComponent<Rigidbody2D>().velocity = direction * speed;
         }
         else if(distance.magnitude > 0 && distance.magnitude <= maximunDistance && detected) //Si el jugador está en el rango de visión del enemigo, y demasiado cerca, el enemigo se aleja.
@@ -74,7 +74,7 @@ public class ShootingEnemyIA : MonoBehaviour
         }
         else //Si no se detecta al jugador, el enemigo se queda quieto.
         {
-            Debug.Log("Quieto");
+            //Debug.Log("Quieto");
             GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0);
         }
 

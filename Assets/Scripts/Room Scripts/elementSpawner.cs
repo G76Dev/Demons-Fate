@@ -8,30 +8,46 @@ public class elementSpawner : MonoBehaviour
     [SerializeField] Vector2Int bottomRight;
     int usableHeight;
     int usableWidth;
-    HashSet<Vector2Int> usedCells = new HashSet<Vector2Int>();
+
+    roomController rController;
 
     void Start()
     {
         usableHeight = topLeft.y - bottomRight.y + 1;
         usableWidth = bottomRight.x - topLeft.x + 1;
+
+        topLeft.x += (int)transform.position.x; //se ajusta a la x de la room adecuada
+        topLeft.y += (int)transform.position.y; //se ajusta a la y de la room adecuada
+        bottomRight.x += (int)transform.position.x; //se ajusta a la x de la room adecuada
+        bottomRight.y += (int)transform.position.y; //se ajusta a la y de la room adecuada
+
+        rController = GameObject.FindGameObjectWithTag("Rooms").GetComponent<roomController>();
+
+        rController.usedCells.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y)); //se añade el centro de la room para que no se puedan crear cosas en el
+
+        for (int i = 0; i < rController.elementList.Count; i++)
+        {
+            int amount = Random.Range(rController.elementNumberMean[i] - rController.elementNumberVariance[i], rController.elementNumberMean[i] + rController.elementNumberVariance[i]);
+            initializeElement(rController.elementList[i], amount);
+        }
     }
 
-    public void initializeElement(GameObject element, Transform roomInstance, int amount)
+    public void initializeElement(GameObject element, int amount)
     {
         for(int i=0; i<amount; i++)
         {
-            Instantiate(element, getRandomPosition() + transform.position, Quaternion.identity, roomInstance);
+            Instantiate(element, getRandomPosition(), Quaternion.identity, transform);
         }
     }
 
     Vector3 getRandomPosition()
     {
-        Vector2Int positionVector = new Vector2Int(Random.Range(topLeft.x, bottomRight.x) , Random.Range(bottomRight.y, topLeft.y));
-        while (usedCells.Contains(positionVector))
+        Vector2Int positionVector = new Vector2Int(Random.Range(topLeft.x + 1, bottomRight.x - 1) , Random.Range(bottomRight.y + 1, topLeft.y - 1));
+        while (rController.usedCells.Contains(positionVector))
         {
             moveRandomPos(ref positionVector);
         }
-        usedCells.Add(positionVector);
+        rController.usedCells.Add(positionVector);
         return new Vector3(positionVector.x, positionVector.y, 0);
     }
 
@@ -40,22 +56,22 @@ public class elementSpawner : MonoBehaviour
         Vector2Int moveDir = new Vector2Int(Random.Range(-1, 2), Random.Range(-1, 2));
 
         posVector += moveDir;
-        if (posVector.y >= topLeft.y + 1)
+        if (posVector.y >= topLeft.y)
         {
-            posVector.y = bottomRight.y;
+            posVector.y = bottomRight.y + 2;
         }
-        else if (posVector.y <= bottomRight.y - 1)
+        else if (posVector.y <= bottomRight.y)
         {
-            posVector.y = topLeft.y;
+            posVector.y = topLeft.y - 2;
         }
 
-        if (posVector.x <= topLeft.x - 1)
+        if (posVector.x <= topLeft.x)
         {
-            posVector.x = bottomRight.x;
+            posVector.x = bottomRight.x - 2;
         }
-        else if (posVector.x >= bottomRight.x + 1)
+        else if (posVector.x >= bottomRight.x)
         {
-            posVector.x = topLeft.x;
+            posVector.x = topLeft.x + 2;
         }
     }
 }

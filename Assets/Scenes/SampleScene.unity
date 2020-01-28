@@ -687,6 +687,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4217212200277516157, guid: bffa54a3f3b7fb54790ee73229b827b8,
+        type: 3}
+      propertyPath: topLeft.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217212200277516157, guid: bffa54a3f3b7fb54790ee73229b827b8,
+        type: 3}
+      propertyPath: bottomRight.y
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 6706691321876327022, guid: bffa54a3f3b7fb54790ee73229b827b8,
         type: 3}
       propertyPath: m_Layer
@@ -814,7 +824,7 @@ GameObject:
   - component: {fileID: 1051579435}
   - component: {fileID: 1051579434}
   m_Layer: 0
-  m_Name: RoomPrefabs
+  m_Name: RoomController
   m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -832,6 +842,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72a3920d4da1ba438c7232a1e483aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elementList:
+  - {fileID: 8546073932184214381, guid: 025552300ebcbf84f84c75d6996effd8, type: 3}
+  - {fileID: 8546073932184214381, guid: 025552300ebcbf84f84c75d6996effd8, type: 3}
+  - {fileID: 8546073932184214381, guid: 025552300ebcbf84f84c75d6996effd8, type: 3}
+  elementNumberMean: 010000000200000002000000
+  elementNumberVariance: 010000000100000001000000
   maxRooms: 0
   currentRooms: 0
   maxRoomsMean: 10
@@ -869,6 +885,7 @@ MonoBehaviour:
   - {fileID: 6711666053545253172, guid: 6fc2e589fd151ea45a7f53042e2ec552, type: 3}
   - {fileID: 1114336859491515812, guid: 7a36825876fd0e1418ac5d17d46fb452, type: 3}
   block: {fileID: 9017658736492948929, guid: aab94698cc31b6641993dc583e61d912, type: 3}
+  ending: {fileID: 755375578}
   lastRoom: {fileID: 0}
 --- !u!4 &1051579435
 Transform:
@@ -883,7 +900,7 @@ Transform:
   m_Children:
   - {fileID: 2074469633}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1193609934 stripped
 GameObject:
@@ -1013,7 +1030,7 @@ PrefabInstance:
     - target: {fileID: 4142889663103871614, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4142889663103871614, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
