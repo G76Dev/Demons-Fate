@@ -294,16 +294,8 @@ Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
     type: 3}
-  m_PrefabInstance: {fileID: 0}
+  m_PrefabInstance: {fileID: 4400055119543668351}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520077520}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +426,7 @@ MonoBehaviour:
   bladeDistance: 1.3
   weapon: {fileID: 505106492}
   blade: {fileID: 1707428162}
+  thrust: 0.5
 --- !u!212 &737164886
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -552,6 +545,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7776528486151003682, guid: 86e7ab49a6370324a8c5113324b80938,
     type: 3}
   bulletForce: 15
+  postMeleeCooldown: 3
   shootCooldown: 0.3
 --- !u!114 &737164891
 MonoBehaviour:

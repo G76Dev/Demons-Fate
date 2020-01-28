@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,22 +7,45 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     [Header("Player Variables")]
-    [SerializeField] float speed;
-    [SerializeField] float weaponDistance;
-    [SerializeField] float bladeDistance;
-    [SerializeField] Transform weapon;
-    [SerializeField] Transform blade;
+    [Tooltip("Velocidad de movimiento del jugador")] [SerializeField] float speed;
+    [Tooltip("Distancia entre el arma a distancia y el jugador")] [SerializeField] float weaponDistance;
+    [Tooltip("Distancia entre el jugador y el arma cuerpo a cuerpo")] [SerializeField] float bladeDistance;
+    [Tooltip("Referencia al punto donde se encuentra el arma a distancia")] [SerializeField] Transform weapon;
+    [Tooltip("Referencia al punto donde se instanciarán los ataques cuerpo a cuerpo")] [SerializeField] Transform blade;
+    [Tooltip("Cantidad de espacio que avanza el jugador al atacar en una direccion")] [SerializeField] float thrust = 1;
+    private Vector3 mouseVector;
+    private bool canMove;
+    private meleeController melee;
+
+
+    //EVENTOS/DELEGATES
+
+    void OnEnable() //Subscribe la funcion al evento cuando se crea este objeto
+    {
+        meleeController.PlayerAttack += pushPlayer;
+    }
+
+    void OnDisable() //Cuando se destruye o desactiva este objeto, quita la funcion del evento
+    {
+        meleeController.PlayerAttack -= pushPlayer;
+    }
+
+
 
     void Start()
     {
+        canMove = true;
         rb = GetComponent<Rigidbody2D>();
+        melee = GetComponent<meleeController>();
     }
+
+
 
     void Update()
     {
         float mouseVectorX = (Input.mousePosition.x - Screen.width / 2) - transform.position.x;
         float mouseVectorY = (Input.mousePosition.y - Screen.height / 2) - transform.position.y;
-        Vector3 mouseVector = new Vector3(mouseVectorX, mouseVectorY, 0);
+        mouseVector = new Vector3(mouseVectorX, mouseVectorY, 0);
         mouseVector.Normalize();
 
         weapon.position = transform.position + mouseVector * weaponDistance;
@@ -38,8 +62,31 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void pushPlayer()
+    {
+        canMove = false;
+        rb.velocity = new Vector2(0,0);
+        this.transform.SetPositionAndRotation(new Vector3(this.transform.position.x + mouseVector.x * thrust, this.transform.position.y + mouseVector.y * thrust),this.transform.rotation);
+        StartCoroutine(stopWhileAttacking(melee.getSlashDuration())); //Obtiene la longitud de la animacion del ataque del script de melee, 
+        //y hace que el jugador no se pueda mover durante ese periodo de tiempo
+        Debug.Log("push realizado");
+    }
+
+ 
+    IEnumerator stopWhileAttacking(float sec)
+    {
+        //Debug.Log(sec);
+
+        yield return new WaitForSeconds(sec);
+        canMove = true;
+    }
+
+
     void FixedUpdate()
     {
-        rb.velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) * speed;
+        if (canMove)
+        {
+            rb.velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) * speed;
+        }
     }
 }

@@ -6,9 +6,11 @@ public class slashBehaviour : MonoBehaviour
 {
     private Animator anim;
 
+
     private void Start()
     {
         anim = this.GetComponent<Animator>();
+
     }
 
     private void Update()
