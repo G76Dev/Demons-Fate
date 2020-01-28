@@ -16,7 +16,7 @@ public class shootingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        canShoot = true;
     }
 
     // Update is called once per frame
@@ -36,11 +36,18 @@ public class shootingController : MonoBehaviour
             Rigidbody2D rb2d = bullet.GetComponent<Rigidbody2D>();
             rb2d.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
             canShoot = false;
-            //StartCoroutine
+            StartCoroutine(cooldown());
         } else
         {
             //do nothing
         }
 
+    }
+
+    IEnumerator cooldown()
+    {
+        yield return new WaitForSeconds(shootCooldown);
+        if(!canShoot)
+        canShoot = true;
     }
 }

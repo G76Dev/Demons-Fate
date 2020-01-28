@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     [Header("Player Variables")]
     [SerializeField] float speed;
     [SerializeField] float weaponDistance;
+    [SerializeField] float bladeDistance;
     [SerializeField] Transform weapon;
+    [SerializeField] Transform blade;
 
     void Start()
     {
@@ -27,6 +29,12 @@ public class PlayerController : MonoBehaviour
             weapon.rotation = Quaternion.Euler(0,0, Vector3.Angle(mouseVector, Vector3.right) - 90);
         else
             weapon.rotation = Quaternion.Euler(0, 0, -Vector3.Angle(mouseVector, Vector3.right) - 90);
+
+        blade.position = transform.position + mouseVector * bladeDistance;
+        if (mouseVectorY >= 0)
+            blade.rotation = Quaternion.Euler(0, 0, Vector3.Angle(mouseVector, Vector3.right) - 90);
+        else
+            blade.rotation = Quaternion.Euler(0, 0, -Vector3.Angle(mouseVector, Vector3.right) - 90);
 
     }
 
