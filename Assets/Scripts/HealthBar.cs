@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
     void changeHealth(int h)
     {
         setHealth(health + h);
-        GameObject hp = Instantiate(floatingText, transform.position, transform.rotation, transform);
+        var hp = Instantiate(floatingText, transform.position, transform.rotation, transform);
         hp.GetComponent<TextMesh>().text = h.ToString();
     }
 
@@ -34,7 +34,7 @@ public class HealthBar : MonoBehaviour
         bar.localScale = new Vector3((float)h / (float)mH, transform.localScale.y, transform.localScale.z);
     }
 
-    private void Start()
+    /*private void Start()
     {
         StartCoroutine(test());
     }
@@ -44,5 +44,5 @@ public class HealthBar : MonoBehaviour
         yield return new WaitForSeconds(1);
         changeHealth(-20);
         StartCoroutine(test());
-    }
+    }*/
 }
