@@ -9,7 +9,7 @@ public class bulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!shootedByIA || collision.gameObject.tag != "ShootingEnemy")
+        if ((!shootedByIA || collision.gameObject.tag != "ShootingEnemy") && collision.gameObject.tag != "SpawnPoint" && collision.gameObject.tag != "Checker")
         {
             GameObject FX = Instantiate(hitFX, transform.position, Quaternion.identity);
             Destroy(FX, 2f);

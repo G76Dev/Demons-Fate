@@ -9,6 +9,8 @@ TagManager:
   - Rooms
   - Checker
   - Block
+  - ShootingEnemy
+  - Enemy
   layers:
   - Default
   - TransparentFX

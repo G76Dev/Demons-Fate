@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4142889663103871613}
   - component: {fileID: 4142889663103871612}
   - component: {fileID: 4142889663103871615}
-  - component: {fileID: 8855791017804480590}
-  m_Layer: 0
+  - component: {fileID: 164870564963150038}
+  m_Layer: 2
   m_Name: ShootingEnemy
-  m_TagString: Enemy
+  m_TagString: ShootingEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,8 +122,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &8855791017804480590
+  m_Constraints: 0
+--- !u!61 &164870564963150038
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

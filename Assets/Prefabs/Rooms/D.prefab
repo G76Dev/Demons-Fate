@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 7266428973033767041}
   - component: {fileID: 6975080148280450799}
   - component: {fileID: 6680863237710033004}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SpawnPointD
   m_TagString: SpawnPoint
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 6792975600469111734}
   - component: {fileID: 1242410443467807439}
   - component: {fileID: 3143955884052048867}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Checker
   m_TagString: Checker
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
