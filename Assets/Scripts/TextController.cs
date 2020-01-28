@@ -5,12 +5,14 @@ using UnityEngine;
 public class TextController : MonoBehaviour
 {
     [SerializeField] float destroyTime = 0.4f;
-    [SerializeField] Vector3 offset;
+    [SerializeField] float offsetY;
+    [SerializeField] float randomOffsetX;
 
     void Start()
     {
         Destroy(gameObject, destroyTime);
 
-        transform.localPosition += offset;
+        float offsetX = Random.Range(-randomOffsetX, randomOffsetX);
+        transform.localPosition += new Vector3(offsetX, offsetY, 0);
     }
 }
