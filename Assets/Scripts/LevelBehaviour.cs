@@ -24,6 +24,8 @@ public class LevelBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DontDestroyOnLoad(this);
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             habilitiesSelector();
