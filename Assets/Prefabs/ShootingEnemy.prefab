@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  detectDistance: 10
+  detectDistance: 13
   maximunDistance: 5
   maximunShootingDistance: 6
   shootingTime: 1
