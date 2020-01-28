@@ -5,14 +5,16 @@ using UnityEngine;
 public class bulletBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject hitFX;
+    public bool shootedByIA = false;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        GameObject FX = Instantiate(hitFX, transform.position, Quaternion.identity);
-        Destroy(FX, 2f);
-        Destroy(gameObject);
-
+        if (!shootedByIA || collision.gameObject.tag != "ShootingEnemy")
+        {
+            GameObject FX = Instantiate(hitFX, transform.position, Quaternion.identity);
+            Destroy(FX, 2f);
+            Destroy(gameObject);
+        }   
     }
 
 }

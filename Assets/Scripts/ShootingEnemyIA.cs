@@ -45,6 +45,7 @@ public class ShootingEnemyIA : MonoBehaviour
                 float angle = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg;
                 bulletIn.transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
                 bulletIn.GetComponent<Rigidbody2D>().velocity = Vector3.Normalize(playerReference.transform.position-transform.position) * bulletSpeed;
+                bulletIn.GetComponent<bulletBehaviour>().shootedByIA = true;
                 shootingTimer = 0;
             }
         }
