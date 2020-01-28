@@ -16,12 +16,13 @@ public class MeleeEnemyIA : MonoBehaviour
     private Rigidbody2D rb;
     private bool inPush = false;
 
-    public GameObject playerReference;
+    private GameObject playerReference;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerReference = GameObject.Find("Player");
     }
 
     // Update is called once per frame
