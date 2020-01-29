@@ -22,6 +22,12 @@ public class bulletBehaviour : MonoBehaviour
             collision.gameObject.GetComponent<EnemyGenericController>().takeDamage(damage);
 
         }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<HPBehaviour>().actualHP -= (damage / 10);
+            collision.gameObject.GetComponent<HPBehaviour>().recalculateHP();
+        }
     }
 
 }
