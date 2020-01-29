@@ -10,7 +10,8 @@ public class MeleeEnemyIA : MonoBehaviour
     public float maximunDistance;
     public float attackTime;
 
-
+    private EnemyGenericController egc;
+    private bool movement = true;
     private float timerPush = 0;
     private float attackTimer = 0;
     private Vector3 distance;
@@ -27,42 +28,52 @@ public class MeleeEnemyIA : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerReference = GameObject.Find("Player");
+        egc = this.GetComponent<EnemyGenericController>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        this.movement = egc.movement;
+
         distance = playerReference.transform.position - transform.position;
         direction = Vector3.Normalize(distance);
 
-        if (distance.magnitude <= 0 && distance.magnitude < -maximunDistance && distance.magnitude >= -detectDistance && detected && !preparing && !inPush) //Si el jugador está en el rango de vision del enemigo, el enemigo le persigue
+        if (distance.magnitude <= 0 && distance.magnitude < -maximunDistance && distance.magnitude >= -detectDistance && detected && !preparing && !inPush && movement) //Si el jugador está en el rango de vision del enemigo, el enemigo le persigue
         {
             attackTimer = 0;
             rb.velocity = direction * speed;
             inPush = false;
         }
-        else if (distance.magnitude > 0 && distance.magnitude > maximunDistance && distance.magnitude <= detectDistance && detected && !preparing && !inPush) //Si el jugador está en el rango de vision del enemigo,
+        else if (distance.magnitude > 0 && distance.magnitude > maximunDistance && distance.magnitude <= detectDistance && detected && !preparing && !inPush && movement) //Si el jugador está en el rango de vision del enemigo,
         {
             attackTimer = 0;
             rb.velocity = direction * speed;
             inPush = false;
         }
-        else if (distance.magnitude > 0 && distance.magnitude <= maximunDistance && detected && !inPush) //Si el jugador está en el rango de visión del enemigo, y demasiado cerca, el enemigo embiste.
+        else if (distance.magnitude > 0 && distance.magnitude <= maximunDistance && detected && !inPush && movement) //Si el jugador está en el rango de visión del enemigo, y demasiado cerca, el enemigo embiste.
         {
             attack();
         }
-        else if (distance.magnitude <= 0 && distance.magnitude >= maximunDistance && detected && !inPush) //Si el jugador está en el rango de visión del enemigo, y demasiado cerca, el enemigo embiste.
+        else if (distance.magnitude <= 0 && distance.magnitude >= maximunDistance && detected && !inPush && movement) //Si el jugador está en el rango de visión del enemigo, y demasiado cerca, el enemigo embiste.
         {
             attack();
-        }else if (preparing)
+        }else if (preparing && movement)
         {
             attack();
         }
-        else if(!inPush) //Si no se detecta al jugador, el enemigo se queda quieto.
+        else if(!inPush && movement) //Si no se detecta al jugador, el enemigo se queda quieto.
         {
             rb.velocity = new Vector3(0, 0);
             inPush = false;
+        }
+
+        if (!movement)
+        {
+            inPush = false;
+            preparing = false;
+            attackTimer = 0;
         }
 
 

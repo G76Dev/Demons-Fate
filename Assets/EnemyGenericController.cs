@@ -11,6 +11,10 @@ public class EnemyGenericController : MonoBehaviour
     [SerializeField] GameObject DieFX;
     private bool alive;
 
+    [SerializeField] float timeStopped;
+    private float timerStopped=0;
+    public bool movement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +33,23 @@ public class EnemyGenericController : MonoBehaviour
     {
         health = health - dmg;
         Debug.Log(health);
+        dontMove();
         healthBar.changeHealth(-dmg);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!movement)
+        {
+            timerStopped += Time.deltaTime;
+            if (timerStopped >= timeStopped)
+            {
+                timerStopped = 0;
+                movement = true;
+            }
+        }
+
         if (health <= 0 && alive)
         {
             alive = false;
@@ -49,5 +64,13 @@ public class EnemyGenericController : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         healthBar.GetComponent<Transform>().Translate(new Vector3(999, 999, 999));
         Destroy(gameObject,2);
+    }
+
+    public void dontMove()
+    {
+        //Si se quiere introducir un knockup a los enemigos usando esta función, se recomienda poner la velocidad de los enemigos a 0 antes de hacer el empuje.
+        this.movement = false;
+        timerStopped = 0;
+        Debug.Log("Paralizado");
     }
 }

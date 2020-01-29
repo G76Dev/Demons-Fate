@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DieFX: {fileID: 9078814408047915560, guid: b7698dbdc4740a14aa5a201421987372, type: 3}
+  timeStopped: 2
+  movement: 1
 --- !u!114 &4142889663103871612
 MonoBehaviour:
   m_ObjectHideFlags: 0
