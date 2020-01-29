@@ -10,6 +10,7 @@ public class roomController : MonoBehaviour
     public List<int> elementNumberVariance;
 
     [HideInInspector] public HashSet<Vector2Int> usedCells = new HashSet<Vector2Int>();
+    [HideInInspector] public HashSet<Vector2Int> usedRooms = new HashSet<Vector2Int>();
 
     [HideInInspector] public int maxRooms;
     [HideInInspector] public int currentRooms = 0;
@@ -23,26 +24,35 @@ public class roomController : MonoBehaviour
     public GameObject[] leftRooms;
     public GameObject block;
     public GameObject ending;
-    public GameObject lastRoom;
-    bool canInitLastRoom = true;
+    [HideInInspector] public GameObject lastRoom;
+    [HideInInspector] public bool canInitLastRoom = true;
+
+    float timer = 1.5f;
 
     private void Start()
     {
-        maxRooms = Random.Range(maxRoomsMean - maxRoomsVariance, maxRoomsMean + maxRoomsVariance) - 1;   
+        maxRooms = Random.Range(maxRoomsMean - maxRoomsVariance, maxRoomsMean + maxRoomsVariance) - 1;
+
+        usedRooms.Add(new Vector2Int(0, 0)); //se añade la primera room al conjunto de rooms usadas
     }
 
     public void roomCreated(GameObject r)
     {
         currentRooms++;
         lastRoom = r;
+        timer = 1.5f;
     }
 
-    public void lastRoomInit()
+    private void Update()
     {
         if (canInitLastRoom)
         {
-            canInitLastRoom = false;
-            Instantiate(ending, lastRoom.transform.position, Quaternion.identity, lastRoom.transform);
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                canInitLastRoom = false;
+                Instantiate(ending, lastRoom.transform.position, Quaternion.identity, lastRoom.transform);
+            }
         }
     }
 

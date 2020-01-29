@@ -10,21 +10,21 @@ public class spawnFromPoint : MonoBehaviour
     Transform transformRoomController;
     int rand;
     public bool spawned = false;
+    Vector2Int simplifiedPos;
 
     void Start()
     {
+        simplifiedPos = new Vector2Int((int)transform.position.x, (int)transform.position.y);
         GameObject roomControllerObject = GameObject.FindGameObjectWithTag("Rooms");
         rController = roomControllerObject.GetComponent<roomController>();
         transformRoomController = roomControllerObject.GetComponent<Transform>();
-        Invoke("spawnRooms", 1);
+        Invoke("spawnRooms", 0.5f);
     }
 
     void spawnRooms()
     {
-        //yield return new WaitForSeconds(3);
-        if (!spawned)
-        {
-            if (rController.currentRooms < rController.maxRooms)
+        if (!rController.usedRooms.Contains(simplifiedPos)){
+            if (rController.currentRooms < rController.maxRooms && rController.canInitLastRoom)
             {
                 if (openingDirection == 1)
                 {
@@ -50,31 +50,18 @@ public class spawnFromPoint : MonoBehaviour
                     var createdRoom = Instantiate(rController.leftRooms[rand], transform.position, Quaternion.identity, transformRoomController);
                     rController.roomCreated(createdRoom);
                 }
+                rController.usedRooms.Add(simplifiedPos); //se añade al conjunto de posiciones ya usadas
                 spawned = true;
             }
             else
             {
                 var blockInstance = Instantiate(rController.block, transform.position, Quaternion.identity, transformRoomController);
-                blockInstance.GetComponent<Rigidbody2D>().WakeUp();
-                rController.lastRoomInit();
+                //blockInstance.GetComponent<Rigidbody2D>().WakeUp();
             }
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("SpawnPoint"))
+        else
         {
-            if(!collision.GetComponent<spawnFromPoint>().spawned && !spawned)
-            {
-                if (transform.position.x != 0 && transform.position.y != 0)
-                {
-                    var blockInstance = Instantiate(rController.block, transform.position, Quaternion.identity, transformRoomController);
-                    blockInstance.GetComponent<Rigidbody2D>().WakeUp();
-                }
-                Destroy(gameObject);
-            }
-            spawned = true;
+            Destroy(gameObject);
         }
     }
 }

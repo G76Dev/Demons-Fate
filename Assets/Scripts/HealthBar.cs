@@ -12,14 +12,14 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         currentHealth = health;
-        transform.localScale = new Vector3(health / 100, transform.localScale.y, transform.localScale.z);
+        //transform.localScale = new Vector3(health / 100, transform.localScale.y, transform.localScale.z);
     }
 
     void initHealth(int mH)
     {
         health = Mathf.Max(mH, 0);
         currentHealth = health;
-        transform.localScale = new Vector3(health / 100, transform.localScale.y, transform.localScale.z);
+        //transform.localScale = new Vector3(health / 100, transform.localScale.y, transform.localScale.z);
     }
 
     public int getCurrentHealth()

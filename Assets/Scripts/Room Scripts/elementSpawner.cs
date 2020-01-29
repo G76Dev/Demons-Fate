@@ -6,6 +6,7 @@ public class elementSpawner : MonoBehaviour
 {
     [SerializeField] Vector2Int topLeft;
     [SerializeField] Vector2Int bottomRight;
+    [SerializeField] bool isStartingRoom = false;
     int usableHeight;
     int usableWidth;
 
@@ -16,19 +17,23 @@ public class elementSpawner : MonoBehaviour
         usableHeight = topLeft.y - bottomRight.y + 1;
         usableWidth = bottomRight.x - topLeft.x + 1;
 
-        topLeft.x += (int)transform.position.x; //se ajusta a la x de la room adecuada
-        topLeft.y += (int)transform.position.y; //se ajusta a la y de la room adecuada
-        bottomRight.x += (int)transform.position.x; //se ajusta a la x de la room adecuada
-        bottomRight.y += (int)transform.position.y; //se ajusta a la y de la room adecuada
-
         rController = GameObject.FindGameObjectWithTag("Rooms").GetComponent<roomController>();
 
-        rController.usedCells.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y)); //se añade el centro de la room para que no se puedan crear cosas en el
-
-        for (int i = 0; i < rController.elementList.Count; i++)
+        if (!isStartingRoom)
         {
-            int amount = Random.Range(rController.elementNumberMean[i] - rController.elementNumberVariance[i], rController.elementNumberMean[i] + rController.elementNumberVariance[i]);
-            initializeElement(rController.elementList[i], amount);
+            topLeft.x += (int)transform.position.x; //se ajusta a la x de la room adecuada
+            topLeft.y += (int)transform.position.y; //se ajusta a la y de la room adecuada
+            bottomRight.x += (int)transform.position.x; //se ajusta a la x de la room adecuada
+            bottomRight.y += (int)transform.position.y; //se ajusta a la y de la room adecuada
+
+
+            rController.usedCells.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y)); //se añade el centro de la room para que no se puedan crear cosas en el
+
+            for (int i = 0; i < rController.elementList.Count; i++)
+            {
+                int amount = Random.Range(rController.elementNumberMean[i] - rController.elementNumberVariance[i], rController.elementNumberMean[i] + rController.elementNumberVariance[i]);
+                initializeElement(rController.elementList[i], amount);
+            }
         }
     }
 

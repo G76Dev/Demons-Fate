@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9a2ffe59c0763469617605f5409422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DieFX: {fileID: 9078814408047915560, guid: b7698dbdc4740a14aa5a201421987372, type: 3}
 --- !u!114 &7862296871981422852
 MonoBehaviour:
   m_ObjectHideFlags: 0
