@@ -604,11 +604,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2391753489094552784, guid: bab3f8a43bbacd64e99ef76ddabca59d,
-        type: 3}
-      propertyPath: timeStopped
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4142889663103871611, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
       propertyPath: m_Name
