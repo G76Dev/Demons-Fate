@@ -33,7 +33,7 @@ public class EnemyGenericController : MonoBehaviour
     {
         health = health - dmg;
         Debug.Log(health);
-        dontMove();
+        //dontMove();
         healthBar.changeHealth(-dmg);
     }
 

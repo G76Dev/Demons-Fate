@@ -385,7 +385,6 @@ MonoBehaviour:
   slashPoint: {fileID: 336221504}
   weaponPrefab: {fileID: 7643119461130814592, guid: 40023d91e7609994f9097aa800f2223f,
     type: 3}
-  offset: 2
   slashCooldown: 0.5
 --- !u!114 &386228542
 MonoBehaviour:
@@ -404,6 +403,7 @@ MonoBehaviour:
   bladeDistance: 1.3
   weapon: {fileID: 933892861}
   blade: {fileID: 336221504}
+  thrust: 1
 --- !u!114 &386228543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,10 +416,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2758eabe8dd57894eba69a022000ee6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 933892861}
+  weaponPrefab: {fileID: 0}
   bulletPrefab: {fileID: 7776528486151003682, guid: 86e7ab49a6370324a8c5113324b80938,
     type: 3}
   bulletForce: 15
+  postMeleeCooldown: 3
   shootCooldown: 0.3
 --- !u!4 &386228544
 Transform:
@@ -1151,7 +1152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1120}
+  m_AnchoredPosition: {x: 0, y: -4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095935706
