@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class LevelBehaviour : MonoBehaviour
@@ -9,11 +10,11 @@ public class LevelBehaviour : MonoBehaviour
     public List<GameObject> sacredHabilities;
     public List<GameObject> profaneHabilities;
 
-    public GameObject HSCanvas;
+    GameObject HSCanvas;
 
-    public GameObject hability1;
-    public GameObject hability2;
-    public GameObject hability3;
+    GameObject hability1;
+    GameObject hability2;
+    GameObject hability3;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,12 @@ public class LevelBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             habilitiesSelector();
-        }   
+        }
+
+        HSCanvas = GameObject.Find("HabilitesSelectorBackground");
+        hability1 = GameObject.Find("hability 1 text");
+        hability2 = GameObject.Find("hability 2 text");
+        hability3 = GameObject.Find("No hability text");
     }
 
     public void habilitiesSelector()
@@ -42,9 +48,12 @@ public class LevelBehaviour : MonoBehaviour
 
         hability1.GetComponent<Text>().text = sacredHabilities[index1].GetComponent<Text>().text;
         hability1.GetComponentInChildren<Image>().sprite = sacredHabilities[index1].GetComponentInChildren<Image>().sprite;
+        hability1.GetComponentInChildren<Button>().onClick = sacredHabilities[index1].GetComponentInChildren<Button>().onClick;
 
         hability2.GetComponent<Text>().text = profaneHabilities[index2].GetComponent<Text>().text;
         hability2.GetComponentInChildren<Image>().sprite = profaneHabilities[index2].GetComponentInChildren<Image>().sprite;
+        hability2.GetComponentInChildren<Button>().onClick = sacredHabilities[index2].GetComponentInChildren<Button>().onClick;
+
 
         sacredHabilities.RemoveAt(index1);
         profaneHabilities.RemoveAt(index2);
@@ -53,6 +62,11 @@ public class LevelBehaviour : MonoBehaviour
         HSCanvas.GetComponent<Animator>().Play("HSIn");
         Debug.Log("Dale carla");
 
-    } 
+    }
+    
+    public void test()
+    {
+        Debug.Log("Funciona");
+    }
 
 }

@@ -9,10 +9,13 @@ public class PlayerInterface : MonoBehaviour
     [SerializeField] Text killCountText;
     int killCount;
     int enemiesToKill;
+    MetaBehaviour metaBehaviour;
     void Start()
     {
         killCountText.text = "";
     }
+
+ 
 
     public void addEnemiesToKill(int n)
     {
@@ -22,6 +25,13 @@ public class PlayerInterface : MonoBehaviour
 
     public void initKillCount(float clearPercentage)
     {
+        metaBehaviour = GameObject.Find("Meta").GetComponent<MetaBehaviour>();
+        enemiesToKill = (int)(enemiesToKill * clearPercentage);
+        killCountText.text = "Kill Count: " + killCount + "/" + enemiesToKill;
+    }
+    public void initKillCount(float clearPercentage, MetaBehaviour meta)
+    {
+        metaBehaviour = meta;
         enemiesToKill = (int)(enemiesToKill * clearPercentage);
         killCountText.text = "Kill Count: " + killCount + "/" + enemiesToKill;
     }
@@ -29,6 +39,10 @@ public class PlayerInterface : MonoBehaviour
     public void enemyKilled()
     {
         killCount++;
+        if (metaBehaviour != null && killCount >= enemiesToKill)
+        {
+            metaBehaviour.enemysKilled = true;
+        }
         killCountText.text = "Kill Count: " + killCount + "/" + enemiesToKill;
     }
 }

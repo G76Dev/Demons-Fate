@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 233793846188718884}
   - component: {fileID: 233793846188718887}
   m_Layer: 5
-  m_Name: hability 1 text
+  m_Name: Hability Select Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,9 +25,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233793846188718905}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2957045, y: 1.2957047, z: 1.2957045}
+  m_LocalScale: {x: 0.065407485, y: 0.1155013, z: 0.36382908}
   m_Children:
   - {fileID: 233793847105642654}
   m_Father: {fileID: 0}
@@ -197,7 +197,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 233793847105642652}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 233793847105642650}
+        m_MethodName: nextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 233793847105642641}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &233793847105642651
 MonoBehaviour:
   m_ObjectHideFlags: 0

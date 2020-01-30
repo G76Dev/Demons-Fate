@@ -26,4 +26,8 @@ public class MainMenu : MonoBehaviour
         GetComponent<Animator>().Play("BackSettings");
         GameObject.Find("SettingsMenu").GetComponent<Animator>().Play("SettingsOut");
     }
+
+    public void InitGame() {
+        SceneManager.LoadScene("Nivel 1");
+    }
 }

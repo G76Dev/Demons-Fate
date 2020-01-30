@@ -54,9 +54,9 @@ public class roomController : MonoBehaviour
             if (timer <= 0)
             {
                 canInitLastRoom = false;
-                Instantiate(ending, lastRoom.transform.position, Quaternion.identity, lastRoom.transform);
+                GameObject metaInstance = Instantiate(ending, lastRoom.transform.position, Quaternion.identity, lastRoom.transform);
 
-                playerInterface.initKillCount(clearPercentage);
+                playerInterface.initKillCount(clearPercentage, metaInstance.GetComponent<MetaBehaviour>());
             }
         }
     }

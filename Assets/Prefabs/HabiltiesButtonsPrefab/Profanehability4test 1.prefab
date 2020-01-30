@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 233793846188718884}
   - component: {fileID: 233793846188718887}
   m_Layer: 5
-  m_Name: Hability Select Button 4
+  m_Name: Profanehability4test 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 233793847105642652}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 233793847105642650}
+        m_MethodName: HabilidadPrueba1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 233793847105642650}
+        m_MethodName: nextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &233793847105642651
 MonoBehaviour:
   m_ObjectHideFlags: 0
