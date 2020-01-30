@@ -17,7 +17,7 @@ public class bulletBehaviour : MonoBehaviour
             Destroy(FX, 2f);
             Destroy(gameObject);
         }*/
-        if((shootedByIA && collision.gameObject.tag == "Wall") || (shootedByIA && collision.gameObject.tag == "Player"))
+        if((collision.gameObject.tag == "Wall") || (collision.gameObject.tag == "Block"))
         {
             explode();
         }
@@ -28,7 +28,7 @@ public class bulletBehaviour : MonoBehaviour
             explode();
         }
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && shootedByIA)
         {
             collision.gameObject.GetComponent<HPBehaviour>().damage(1, knockback, gameObject);
             explode();

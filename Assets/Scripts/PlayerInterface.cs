@@ -25,7 +25,6 @@ public class PlayerInterface : MonoBehaviour
 
     public void initKillCount(float clearPercentage)
     {
-        metaBehaviour = GameObject.Find("Meta").GetComponent<MetaBehaviour>();
         enemiesToKill = (int)(enemiesToKill * clearPercentage);
         killCountText.text = "Kill Count: " + killCount + "/" + enemiesToKill;
     }
