@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyGenericController))]
+//[RequireComponent(typeof(EnemyGenericController))]
 public class MeleeEnemyIA : MonoBehaviour
 {
     EnemyGenericController enemyController;
