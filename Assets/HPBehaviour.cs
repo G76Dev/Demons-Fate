@@ -41,9 +41,8 @@ public class HPBehaviour : MonoBehaviour
         }
     }
 
-    public void recalculateHP()
+    private void recalculateHP()
     {
-        
         for (int i = 0; i < hearts.Count; i++)
         {
             Destroy(hearts[i]);
@@ -66,14 +65,31 @@ public class HPBehaviour : MonoBehaviour
         }
     }
 
+    public void damage(int amount)
+    {
+        actualHP -= amount;
+        recalculateHP();
+    }
+    public void damage(int amount,float force, GameObject inflictor)
+    {
+        damage(amount);
+        GetComponent<PlayerController>().knockBackPlayer(transform.position - inflictor.transform.position, force);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        recalculateHP();
-
         if (actualHP <= 0)
         {
             die();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("dmgObstacle"))
+        {
+            damage(1, 0.4f, collision.gameObject);
         }
     }
 

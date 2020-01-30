@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyGenericController))]
 public class ShootingEnemyIA : MonoBehaviour
 {
+    EnemyGenericController enemyController;
+
     public float speed;
     public float detectDistance;
     public float maximunDistance;
@@ -22,9 +25,13 @@ public class ShootingEnemyIA : MonoBehaviour
     private Vector3 direction, distance;
     private bool detected;
 
+    [Tooltip("Rozamiento del knockback del jugador")] [SerializeField] float kFriction;
+
     // Start is called before the first frame update
     void Start()
     {
+        enemyController = GetComponent<EnemyGenericController>();
+
         playerReference = GameObject.Find("Player");
         egc = this.GetComponent<EnemyGenericController>();
     }
@@ -84,6 +91,12 @@ public class ShootingEnemyIA : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0);
         }
 
+        //fisicas adicionales de knockback
+        float previousKnockbackL = enemyController.knockback.magnitude - kFriction;
+        if (previousKnockbackL < 0.01f)
+            previousKnockbackL = 0;
+        enemyController.knockback = enemyController.knockback.normalized * previousKnockbackL;
+
     }
 
     private void FixedUpdate()
@@ -100,5 +113,7 @@ public class ShootingEnemyIA : MonoBehaviour
                 detected = false;
             }
         }
+
+        transform.position += enemyController.knockback;
     }
 }

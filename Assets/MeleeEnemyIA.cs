@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyGenericController))]
 public class MeleeEnemyIA : MonoBehaviour
 {
+    EnemyGenericController enemyController;
+
     public float speed;
     public float strength;
     public float detectDistance;
@@ -20,12 +23,15 @@ public class MeleeEnemyIA : MonoBehaviour
     private Rigidbody2D rb;
     private bool inPush = false;
     private bool preparing = false;
-
     private GameObject playerReference;
+
+    [Tooltip("Rozamiento del knockback del jugador")] [SerializeField] float kFriction;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        enemyController = GetComponent<EnemyGenericController>();
         rb = GetComponent<Rigidbody2D>();
         playerReference = GameObject.Find("Player");
         egc = this.GetComponent<EnemyGenericController>();
@@ -86,7 +92,12 @@ public class MeleeEnemyIA : MonoBehaviour
                 inPush = false;
             }
         }
-        
+
+        //fisicas adicionales de knockback
+        float previousKnockbackL = enemyController.knockback.magnitude - kFriction;
+        if (previousKnockbackL < 0.01f)
+            previousKnockbackL = 0;
+        enemyController.knockback = enemyController.knockback.normalized * previousKnockbackL;
     }
 
     private void FixedUpdate()
@@ -103,6 +114,8 @@ public class MeleeEnemyIA : MonoBehaviour
                 detected = false;
             }
         }
+
+        transform.position += enemyController.knockback;
     }
 
     void attack()

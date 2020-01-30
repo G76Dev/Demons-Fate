@@ -6,7 +6,7 @@ using UnityEngine;
 public class shootingController : MonoBehaviour
 {
 
-    [Tooltip("Referencia al objeto del arma a distancia")] [SerializeField] private GameObject weaponPrefab;
+    [Tooltip("Referencia al objeto del arma a distancia")] public GameObject weaponPrefab;
     [Tooltip("Referencia al objeto de la bala")] [SerializeField] private GameObject bulletPrefab;
 
     [SerializeField] private float bulletForce = 29f;

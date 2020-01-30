@@ -27,6 +27,9 @@ public class roomController : MonoBehaviour
     [HideInInspector] public GameObject lastRoom;
     [HideInInspector] public bool canInitLastRoom = true;
 
+    [SerializeField] float clearPercentage;
+    [SerializeField] PlayerInterface playerInterface;
+
     float timer = 1.5f;
 
     private void Start()
@@ -52,6 +55,8 @@ public class roomController : MonoBehaviour
             {
                 canInitLastRoom = false;
                 Instantiate(ending, lastRoom.transform.position, Quaternion.identity, lastRoom.transform);
+
+                playerInterface.initKillCount(clearPercentage);
             }
         }
     }

@@ -100,6 +100,7 @@ MonoBehaviour:
   DieFX: {fileID: 9078814408047915560, guid: b7698dbdc4740a14aa5a201421987372, type: 3}
   timeStopped: 2
   movement: 1
+  knockback: {x: 0, y: 0, z: 0}
 --- !u!114 &7862296871981422852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +118,7 @@ MonoBehaviour:
   detectDistance: 13
   maximunDistance: 3
   attackTime: 1.5
+  kFriction: 0.015
 --- !u!50 &7862296871981422855
 Rigidbody2D:
   serializedVersion: 4

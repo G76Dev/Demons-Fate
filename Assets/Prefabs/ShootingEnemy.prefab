@@ -100,6 +100,7 @@ MonoBehaviour:
   DieFX: {fileID: 9078814408047915560, guid: b7698dbdc4740a14aa5a201421987372, type: 3}
   timeStopped: 2
   movement: 1
+  knockback: {x: 0, y: 0, z: 0}
 --- !u!114 &4142889663103871612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
   shootingTime: 1
   bulletSpeed: 7
   bullet: {fileID: 7776528486151003682, guid: 86e7ab49a6370324a8c5113324b80938, type: 3}
+  kFriction: 0.015
 --- !u!50 &4142889663103871615
 Rigidbody2D:
   serializedVersion: 4

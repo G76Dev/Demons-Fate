@@ -13,9 +13,14 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Referencia al punto donde se encuentra el arma a distancia")] [SerializeField] Transform weapon;
     [Tooltip("Referencia al punto donde se instanciarán los ataques cuerpo a cuerpo")] [SerializeField] Transform blade;
     [Tooltip("Cantidad de espacio que avanza el jugador al atacar en una direccion")] [SerializeField] float thrust = 1;
-    private Vector3 mouseVector;
+    [HideInInspector] public Vector3 mouseVector;
     private bool canMove;
     private meleeController melee;
+
+    [Tooltip("Rozamiento del knockback del jugador")] [SerializeField] float kFriction;
+    Vector3 knockback;
+    float speedModifierX = 1;
+    float speedModifierY = 1;
 
 
     //EVENTOS/DELEGATES
@@ -60,6 +65,12 @@ public class PlayerController : MonoBehaviour
         else
             blade.rotation = Quaternion.Euler(0, 0, -Vector3.Angle(mouseVector, Vector3.right) - 90);
 
+
+        //fisicas adicionales de knockback
+        float previousKnockbackL = knockback.magnitude - kFriction;
+        if (previousKnockbackL < 0.01f)
+            previousKnockbackL = 0;
+        knockback = knockback.normalized * previousKnockbackL;
     }
 
     private void pushPlayer()
@@ -70,6 +81,23 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(stopWhileAttacking(melee.getSlashDuration())); //Obtiene la longitud de la animacion del ataque del script de melee, 
         //y hace que el jugador no se pueda mover durante ese periodo de tiempo
         Debug.Log("push realizado");
+    }
+
+    public void knockBackPlayer(Vector2 dir, float force)
+    {
+        StartCoroutine(stopAdvancing(force / 2.5f));  //tiempo de knockback a ojo;
+        rb.velocity = new Vector2(0, 0);
+        knockback = new Vector3(dir.normalized.x * force, dir.normalized.y * force, 0);
+    }
+
+    IEnumerator stopAdvancing(float sec)
+    {
+        speedModifierX = 0;
+        speedModifierY = 0;
+
+        yield return new WaitForSeconds(sec);
+        speedModifierX = 1;
+        speedModifierY = 1;
     }
 
  
@@ -86,7 +114,9 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            rb.velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) * speed;
+            rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speedModifierX, Input.GetAxis("Vertical") * speedModifierY, 0) * speed;
         }
+
+        transform.position += knockback;
     }
 }

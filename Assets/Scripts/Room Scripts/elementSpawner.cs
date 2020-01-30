@@ -43,6 +43,7 @@ public class elementSpawner : MonoBehaviour
         {
             Instantiate(element, getRandomPosition(), Quaternion.identity, transform);
         }
+        if (element.CompareTag("Enemy")) { GameObject.Find("Canvas").GetComponent<PlayerInterface>().addEnemiesToKill(amount); }
     }
 
     Vector3 getRandomPosition()

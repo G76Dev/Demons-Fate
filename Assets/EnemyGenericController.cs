@@ -15,6 +15,8 @@ public class EnemyGenericController : MonoBehaviour
     private float timerStopped=0;
     public bool movement;
 
+    [HideInInspector]public Vector3 knockback;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +34,15 @@ public class EnemyGenericController : MonoBehaviour
     public void takeDamage(int dmg)
     {
         health = health - dmg;
-        Debug.Log(health);
         //dontMove();
         healthBar.changeHealth(-dmg);
+    }
+
+    public void takeDamage(int dmg, float force, GameObject inflictor)
+    {
+        takeDamage(dmg);
+        Vector3 dir = transform.position - inflictor.transform.position;
+        knockback = new Vector3(dir.normalized.x * force, dir.normalized.y * force, 0);
     }
 
     // Update is called once per frame
@@ -57,13 +65,24 @@ public class EnemyGenericController : MonoBehaviour
         }
     }
 
+   /* IEnumerator stopAdvancing(float sec)
+    {
+        speedModifierX = 0;
+        speedModifierY = 0;
+
+        yield return new WaitForSeconds(sec);
+        speedModifierX = 1;
+        speedModifierY = 1;
+    }*/
+
     private void Die()
     {
         Instantiate(DieFX, this.transform.position, Quaternion.identity);
-        GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<BoxCollider2D>().enabled = false;
-        healthBar.GetComponent<Transform>().Translate(new Vector3(999, 999, 999));
-        Destroy(gameObject,2);
+        GameObject.Find("Canvas").GetComponent<PlayerInterface>().enemyKilled();
+        //GetComponent<SpriteRenderer>().enabled = false;
+        //GetComponent<BoxCollider2D>().enabled = false;
+        //healthBar.GetComponent<Transform>().Translate(new Vector3(999, 999, 999));
+        Destroy(gameObject); //antes estaba en ,2
     }
 
     public void dontMove()

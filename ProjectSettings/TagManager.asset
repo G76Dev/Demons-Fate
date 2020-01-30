@@ -11,6 +11,8 @@ TagManager:
   - Block
   - ShootingEnemy
   - Enemy
+  - dmgObstacle
+  - bullet
   layers:
   - Default
   - TransparentFX
