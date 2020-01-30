@@ -46,6 +46,13 @@ public class HabilityButtonBehaviour : MonoBehaviour
         }
     }
 
+    public void returnToMenu()
+    {
+        Time.timeScale = 1;
+
+        SceneManager.LoadScene("Menu");
+    }
+
     public void HabilidadPrueba2()
     {
         Debug.Log("Habilidad elegida 2:");

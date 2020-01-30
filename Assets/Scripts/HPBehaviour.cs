@@ -98,5 +98,8 @@ public class HPBehaviour : MonoBehaviour
         //programar lo que sea que ocurre cuando se muere. Por ejemplo, se podría poner el timescale a 0, y mostrar por pantalla un texto de derrota, 
         //y un boton de volver a jugar, junto a otro de volver al menú principal
         Debug.Log("Muerte");
+        Time.timeScale = 0;
+        GameObject.Find("Death background").GetComponent<Animator>().Play("HSIn");
+
     }
 }
