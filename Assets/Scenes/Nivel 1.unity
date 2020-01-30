@@ -1626,7 +1626,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.25222498, g: 0.34491315, b: 0.49056602, a: 0}
+  m_BackGroundColor: {r: 0.13725491, g: 0.05490196, b: 0.05490196, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
