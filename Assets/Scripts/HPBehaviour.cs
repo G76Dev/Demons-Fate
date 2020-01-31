@@ -41,7 +41,7 @@ public class HPBehaviour : MonoBehaviour
         }
     }
 
-    private void recalculateHP()
+    public void recalculateHP()
     {
         for (int i = 0; i < hearts.Count; i++)
         {
