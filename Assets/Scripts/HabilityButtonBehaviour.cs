@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class HabilityButtonBehaviour : MonoBehaviour
 {
+    [SerializeField] int increaseMaxHP;
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class HabilityButtonBehaviour : MonoBehaviour
 
         if(gameObject.name == "Hability 2")
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().demonicHabilities++;
+           player.GetComponent<PlayerController>().demonicHabilities++;
         }
 
         switch (SceneManager.GetActiveScene().name)
@@ -76,6 +79,51 @@ public class HabilityButtonBehaviour : MonoBehaviour
     public void HabilidadPrueba3()
     {
         Debug.Log("Habilidad elegida 3:");
+    }
+
+    public void ProfaneHealing()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Profane healing");
+        player.GetComponent<HPBehaviour>().maxHP += increaseMaxHP;
+        player.GetComponent<HPBehaviour>().actualHP = player.GetComponent<HPBehaviour>().maxHP;
+        player.GetComponent<HPBehaviour>().recalculateHP();
+        player.GetComponent<PlayerController>().demonicHabilities++;
+        player.GetComponent<PlayerController>().profaneHealing = true;
+
+    }
+
+    public void activateDemonicSword()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().DemonicSword = true;
+    }
+    public void activateDemonicShooter()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().DemonicShooter = true;
+    }
+
+    public void nonDemonicHabilities()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Se resetean las habilidades demoniacas");
+
+        player.GetComponent<PlayerController>().DemonicSword=false;
+        player.GetComponent<PlayerController>().DemonicShooter = false;
+
+        if (player.GetComponent<PlayerController>().profaneHealing)
+        {
+            player.GetComponent<PlayerController>().profaneHealing = false; 
+            player.GetComponent<HPBehaviour>().maxHP -= increaseMaxHP;
+            player.GetComponent<HPBehaviour>().actualHP -= increaseMaxHP;
+            if (player.GetComponent<HPBehaviour>().actualHP<=0)
+            {
+                player.GetComponent<HPBehaviour>().actualHP = 1;
+            }
+            player.GetComponent<HPBehaviour>().recalculateHP();
+        }
+        
     }
 
 }

@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private bool canMove;
     private meleeController melee;
     private Animator animator;
+    [HideInInspector]public bool DemonicSword, profaneHealing, DemonicShooter;
+    //[HideInInspecto]public bool demonicDash;
 
     [Tooltip("Rozamiento del knockback del jugador")] [SerializeField] float kFriction;
     Vector3 knockback;
@@ -45,6 +47,8 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         rb = GetComponent<Rigidbody2D>();
         melee = GetComponent<meleeController>();
+
+        DemonicShooter = DemonicSword = profaneHealing = false;
     }
 
 

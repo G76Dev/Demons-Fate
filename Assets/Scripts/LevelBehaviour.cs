@@ -52,7 +52,7 @@ public class LevelBehaviour : MonoBehaviour
 
         hability2.GetComponent<Text>().text = profaneHabilities[index2].GetComponent<Text>().text;
         hability2.GetComponentInChildren<Image>().sprite = profaneHabilities[index2].GetComponentInChildren<Image>().sprite;
-        hability2.GetComponentInChildren<Button>().onClick = sacredHabilities[index2].GetComponentInChildren<Button>().onClick;
+        hability2.GetComponentInChildren<Button>().onClick = profaneHabilities[index2].GetComponentInChildren<Button>().onClick;
 
 
         sacredHabilities.RemoveAt(index1);
