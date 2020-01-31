@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Vector3 mouseVector;
     private bool canMove;
     private meleeController melee;
+    private Animator animator;
 
     [Tooltip("Rozamiento del knockback del jugador")] [SerializeField] float kFriction;
     Vector3 knockback;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         canMove = true;
         rb = GetComponent<Rigidbody2D>();
         melee = GetComponent<meleeController>();
@@ -75,10 +77,11 @@ public class PlayerController : MonoBehaviour
 
     private void pushPlayer()
     {
-        canMove = false;
+        //canMove = false;
         rb.velocity = new Vector2(0,0);
         this.transform.SetPositionAndRotation(new Vector3(this.transform.position.x + mouseVector.x * thrust, this.transform.position.y + mouseVector.y * thrust),this.transform.rotation);
-        StartCoroutine(stopWhileAttacking(melee.getSlashDuration())); //Obtiene la longitud de la animacion del ataque del script de melee, 
+
+        //ASStartCoroutine(stopWhileAttacking(melee.getSlashDuration())); //Obtiene la longitud de la animacion del ataque del script de melee, 
         //y hace que el jugador no se pueda mover durante ese periodo de tiempo
         Debug.Log("push realizado");
     }
@@ -115,6 +118,8 @@ public class PlayerController : MonoBehaviour
         if (canMove)
         {
             rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speedModifierX, Input.GetAxis("Vertical") * speedModifierY, 0) * speed;
+            animator.SetFloat("VerticalSpeed", Mathf.Abs(rb.velocity.y));
+            animator.SetFloat("HorizontalSpeed", rb.velocity.x);
         }
 
         transform.position += knockback;

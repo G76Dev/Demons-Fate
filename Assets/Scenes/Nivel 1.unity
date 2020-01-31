@@ -982,10 +982,11 @@ GameObject:
   - component: {fileID: 737164890}
   - component: {fileID: 737164885}
   - component: {fileID: 737164891}
+  - component: {fileID: 737164892}
   - component: {fileID: 737164886}
   - component: {fileID: 737164889}
+  - component: {fileID: 737164893}
   - component: {fileID: 737164888}
-  - component: {fileID: 737164892}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1051,12 +1052,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: da922b46e3ae55446b96b251fcc80a76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73d0922ba5f0f7845b58738642e3733f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.36, y: 9.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1078,8 +1079,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &737164888
-CircleCollider2D:
+--- !u!70 &737164888
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1087,13 +1088,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 737164884}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: d86ce39e4526bff43b7749f99f6b9384, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: -0.018568397, y: -0.12064791}
+  m_Size: {x: 1.3343585, y: 2.409448}
+  m_Direction: 0
 --- !u!50 &737164889
 Rigidbody2D:
   serializedVersion: 4
@@ -1168,6 +1169,25 @@ MonoBehaviour:
   maxHP: 5
   actualHP: 7
   distanciaEntreCorazones: 100
+--- !u!95 &737164893
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737164884}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 390047c680585764d8b3baa23f89986b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &894961427
 PrefabInstance:
   m_ObjectHideFlags: 0
