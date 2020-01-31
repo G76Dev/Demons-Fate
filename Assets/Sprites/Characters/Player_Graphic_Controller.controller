@@ -104,7 +104,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 80, y: 210, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 2624296103946731171}
+  m_DefaultState: {fileID: -8591184987707534799}
 --- !u!1101 &-6047459357615722046
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -117,7 +117,7 @@ AnimatorStateTransition:
     m_ConditionEvent: HorizontalSpeed
     m_EventTreshold: -0.1
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -4450765357860954583}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -166,8 +166,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: HorizontalSpeed
+  - m_ConditionMode: 2
+    m_ConditionEvent: isMoving
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8591184987707534799}
@@ -223,13 +223,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: HorizontalSpeed
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -301,7 +295,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cb86f49a72780314592a7a2c1037e9a7, type: 2}
+  m_Motion: {fileID: 7400000, guid: f4e226480e41eb04b80d45b58f7e186e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -389,9 +383,7 @@ AnimatorState:
   m_Name: main_character_walking right
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -9146009276743390979}
-  - {fileID: -5459027565559989676}
+  m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -499,7 +491,7 @@ AnimatorStateTransition:
     m_ConditionEvent: VerticalSpeed
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -4450765357860954583}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
