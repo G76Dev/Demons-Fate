@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   increaseMaxHP: 0
+  player: {fileID: 0}
 --- !u!1001 &226890416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -911,6 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   increaseMaxHP: 0
+  player: {fileID: 0}
 --- !u!114 &504466623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2145,9 +2147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sacredHabilities:
-  - {fileID: 233793846188718905, guid: c199f3a14162aff4b8e3fcb67ec6b791, type: 3}
-  - {fileID: 233793846188718905, guid: 259932c7ff5b4934181864a1100f044f, type: 3}
-  - {fileID: 233793846188718905, guid: 030937e24aeabf343941cc34531c85eb, type: 3}
+  - {fileID: 233793846188718905, guid: ecc00cbfc7ebbd74986b4d3a9c821a16, type: 3}
+  - {fileID: 233793846188718905, guid: ecc00cbfc7ebbd74986b4d3a9c821a16, type: 3}
+  - {fileID: 233793846188718905, guid: ecc00cbfc7ebbd74986b4d3a9c821a16, type: 3}
   profaneHabilities:
   - {fileID: 233793846188718905, guid: c771935dfb88a344182e132c9ac10fbd, type: 3}
   - {fileID: 233793846188718905, guid: c771935dfb88a344182e132c9ac10fbd, type: 3}
@@ -2874,6 +2876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   increaseMaxHP: 0
+  player: {fileID: 0}
 --- !u!114 &1781783135
 MonoBehaviour:
   m_ObjectHideFlags: 0
