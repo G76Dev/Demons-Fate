@@ -29,6 +29,6 @@ public class MainMenu : MonoBehaviour
 
     public void InitGame() {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Nivel 1");
+        SceneManager.LoadScene("InitScene");
     }
 }

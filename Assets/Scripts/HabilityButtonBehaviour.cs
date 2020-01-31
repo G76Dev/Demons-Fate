@@ -34,6 +34,9 @@ public class HabilityButtonBehaviour : MonoBehaviour
 
         switch (SceneManager.GetActiveScene().name)
         {
+            case "InitScene":
+                SceneManager.LoadScene("Nivel 1");
+                break;
             case "Nivel 1":
                 SceneManager.LoadScene("Nivel 2");
                 break;
@@ -42,6 +45,12 @@ public class HabilityButtonBehaviour : MonoBehaviour
                 break;
             case "Nivel 3":
                 SceneManager.LoadScene("Nivel Final");
+                break;
+            case "Nivel Final":
+                SceneManager.LoadScene("FinalScene");
+                break;
+            case "FinalScene":
+                SceneManager.LoadScene("Menu");
                 break;
         }
     }
