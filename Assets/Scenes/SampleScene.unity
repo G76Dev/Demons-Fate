@@ -1294,6 +1294,11 @@ PrefabInstance:
       propertyPath: bottomRight.y
       value: -7
       objectReference: {fileID: 0}
+    - target: {fileID: 4217212200277516157, guid: bffa54a3f3b7fb54790ee73229b827b8,
+        type: 3}
+      propertyPath: isStartingRoom
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6706691321876327022, guid: bffa54a3f3b7fb54790ee73229b827b8,
         type: 3}
       propertyPath: m_Layer
@@ -1326,7 +1331,7 @@ PrefabInstance:
     - target: {fileID: 4142889663103871611, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4142889663103871614, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
@@ -1514,14 +1519,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elementList:
-  - {fileID: 7862296871981422851, guid: c3eff292563d46c4e9014f126e6997a1, type: 3}
-  - {fileID: 4142889663103871611, guid: bab3f8a43bbacd64e99ef76ddabca59d, type: 3}
+  - {fileID: 393869660187222618, guid: 6fc9531d0fb689d4f9450fc64b5c4a48, type: 3}
   - {fileID: 2561227998246853180, guid: effdbd2f85750194fb3dfcb3fa4bcdfd, type: 3}
-  elementNumberMean: 020000000200000002000000
-  elementNumberVariance: 010000000100000001000000
+  - {fileID: 2561227998246853180, guid: effdbd2f85750194fb3dfcb3fa4bcdfd, type: 3}
+  elementNumberMean: 010000000300000003000000
+  elementNumberVariance: 000000000000000000000000
   maxRooms: 0
   currentRooms: 0
-  maxRoomsMean: 10
+  maxRoomsMean: 50
   maxRoomsVariance: 0
   downRooms:
   - {fileID: 8514909665589551085, guid: 3f6e98209cd45ac4e96c0fc4f53b6bf8, type: 3}
@@ -1733,10 +1738,6 @@ MonoBehaviour:
   - {fileID: 233793846188718905, guid: 338d7bce30095774b9bd247bf4ab5c1b, type: 3}
   - {fileID: 233793846188718905, guid: 770d1ab91b039cd4c8c05cdf74012c0a, type: 3}
   - {fileID: 233793846188718905, guid: 1633d27f7dca8b8438d393066e855685, type: 3}
-  HSCanvas: {fileID: 312069485}
-  hability1: {fileID: 1590687404}
-  hability2: {fileID: 1688469971}
-  hability3: {fileID: 1223099950}
 --- !u!4 &1341375936
 Transform:
   m_ObjectHideFlags: 0
@@ -1786,12 +1787,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1590687404 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 233793846188718905, guid: 8d73767ac9188c542bfd14566474889a,
-    type: 3}
-  m_PrefabInstance: {fileID: 469666814}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1680866730
 PrefabInstance:
   m_ObjectHideFlags: 0

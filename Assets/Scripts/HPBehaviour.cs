@@ -85,13 +85,13 @@ public class HPBehaviour : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("dmgObstacle"))
         {
             damage(1, 0.4f, collision.gameObject);
         }
-    }
+    }*/
 
     private void die()
     {

@@ -5,9 +5,13 @@ using UnityEngine;
 public class roomController : MonoBehaviour
 {
     [Header("Elements")]
+
     public List<GameObject> elementList;
     public List<int> elementNumberMean;
     public List<int> elementNumberVariance;
+
+    public List<GameObject> centralElemList;
+    public float centralChance = 0.5f;
 
     [HideInInspector] public HashSet<Vector2Int> usedCells = new HashSet<Vector2Int>();
     [HideInInspector] public HashSet<Vector2Int> usedRooms = new HashSet<Vector2Int>();
@@ -57,6 +61,11 @@ public class roomController : MonoBehaviour
                 GameObject metaInstance = Instantiate(ending, lastRoom.transform.position, Quaternion.identity, lastRoom.transform);
 
                 playerInterface.initKillCount(clearPercentage, metaInstance.GetComponent<MetaBehaviour>());
+
+                if(lastRoom.GetComponent<elementSpawner>().centralElement != null)
+                {
+                    Destroy(lastRoom.GetComponent<elementSpawner>().centralElement);
+                }
             }
         }
     }

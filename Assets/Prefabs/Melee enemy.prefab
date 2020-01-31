@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7862296871981422852}
   - component: {fileID: 7862296871981422855}
   - component: {fileID: 1843554250}
+  - component: {fileID: 7228290460311003453}
   m_Layer: 2
   m_Name: Melee enemy
   m_TagString: Enemy
@@ -166,6 +167,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7228290460311003453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7862296871981422851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9c37bdc1fba4c4e9fec2c38ba6e34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objId: 2
+  dimSize: 1
 --- !u!1001 &728856614988342244
 PrefabInstance:
   m_ObjectHideFlags: 0

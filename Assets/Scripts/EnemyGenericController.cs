@@ -77,7 +77,7 @@ public class EnemyGenericController : MonoBehaviour
 
     private void Die()
     {
-        Instantiate(DieFX, this.transform.position, Quaternion.identity);
+        Destroy(Instantiate(DieFX, this.transform.position, Quaternion.identity),2);
         GameObject.Find("Canvas").GetComponent<PlayerInterface>().enemyKilled();
         //GetComponent<SpriteRenderer>().enabled = false;
         //GetComponent<BoxCollider2D>().enabled = false;
