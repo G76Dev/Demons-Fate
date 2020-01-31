@@ -32,10 +32,15 @@ public class HabilityButtonBehaviour : MonoBehaviour
     {
         Time.timeScale = 1;
 
+        if(gameObject.name == "Hability 2")
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().demonicHabilities++;
+        }
+
         switch (SceneManager.GetActiveScene().name)
         {
             case "InitScene":
-                SceneManager.LoadScene("Nivel 1");
+                SceneManager.LoadScene("Nivel tutorial");
                 break;
             case "Nivel 1":
                 SceneManager.LoadScene("Nivel 2");
@@ -46,14 +51,12 @@ public class HabilityButtonBehaviour : MonoBehaviour
             case "Nivel 3":
                 SceneManager.LoadScene("Nivel Final");
                 break;
-            case "Nivel Final":
-                SceneManager.LoadScene("FinalScene");
-                break;
             case "FinalScene":
                 SceneManager.LoadScene("Menu");
                 break;
         }
     }
+
 
     public void returnToMenu()
     {

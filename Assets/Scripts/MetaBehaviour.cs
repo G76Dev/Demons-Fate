@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MetaBehaviour : MonoBehaviour
 {
@@ -10,7 +11,25 @@ public class MetaBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && enemysKilled)
         {
-            GameObject.Find("LevelBehaviour").GetComponent<LevelBehaviour>().habilitiesSelector();
+            if (SceneManager.GetActiveScene().name == "Nivel tutorial")
+            {
+                SceneManager.LoadScene("Nivel 1");
+            }
+            else if (SceneManager.GetActiveScene().name == "Nivel Final")
+            {
+                if(collision.gameObject.GetComponent<PlayerController>().demonicHabilities >= 2)
+                {
+                    SceneManager.LoadScene("FinalSceneBad");
+                }
+                else
+                {
+                    SceneManager.LoadScene("FinalScene");
+                }
+            }
+            else
+            {
+                GameObject.Find("LevelBehaviour").GetComponent<LevelBehaviour>().habilitiesSelector();
+            }
         }
     }
 }

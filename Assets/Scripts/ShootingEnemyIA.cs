@@ -25,6 +25,8 @@ public class ShootingEnemyIA : MonoBehaviour
     private Vector3 direction, distance;
     private bool detected;
 
+    [SerializeField] Transform shootingPoint;
+
     [Tooltip("Rozamiento del knockback del jugador")] [SerializeField] float kFriction;
 
     // Start is called before the first frame update
@@ -53,9 +55,8 @@ public class ShootingEnemyIA : MonoBehaviour
             if ((distance.magnitude >0 && distance.magnitude <= maximunShootingDistance) || (distance.magnitude <= 0 && distance.magnitude >= -maximunShootingDistance))
             {
                        
-                GameObject bulletIn = Instantiate(bullet);
+                GameObject bulletIn = Instantiate(bullet, shootingPoint.position, Quaternion.identity);
 
-                bulletIn.transform.position = transform.position;
                 // bulletIn.transform.LookAt(playerReference.transform);
                 float angle = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg;
                 bulletIn.transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
@@ -89,6 +90,15 @@ public class ShootingEnemyIA : MonoBehaviour
         {
             //Debug.Log("Quieto");
             GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0);
+        }
+
+        if(distance.x >= 0 && distance.magnitude <= detectDistance && detected)
+        {
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+        }
+        if (distance.x < 0 && distance.magnitude <= detectDistance && detected)
+        {
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
         }
 
         //fisicas adicionales de knockback

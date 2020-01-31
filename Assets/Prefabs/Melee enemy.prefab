@@ -122,6 +122,8 @@ MonoBehaviour:
   detectDistance: 13
   maximunDistance: 3
   attackTime: 1.5
+  knockback: 0.3
+  dmg: 1
   kFriction: 0.015
 --- !u!50 &7862296871981422855
 Rigidbody2D:

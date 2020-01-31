@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     float speedModifierX = 1;
     float speedModifierY = 1;
 
-
+    public int demonicHabilities = 0;
     //EVENTOS/DELEGATES
 
     void OnEnable() //Subscribe la funcion al evento cuando se crea este objeto
@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         animator = GetComponent<Animator>();
         canMove = true;
         rb = GetComponent<Rigidbody2D>();

@@ -35,6 +35,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 481658505661653375}
+  - {fileID: 132666669924911771}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,6 +126,7 @@ MonoBehaviour:
   shootingTime: 1
   bulletSpeed: 7
   bullet: {fileID: 7776528486151003682, guid: 86e7ab49a6370324a8c5113324b80938, type: 3}
+  shootingPoint: {fileID: 132666669924911771}
   kFriction: 0.015
 --- !u!50 &4142889663103871615
 Rigidbody2D:
@@ -197,6 +199,36 @@ CapsuleCollider2D:
   m_Offset: {x: 0.025136948, y: -0.25533044}
   m_Size: {x: 1.2810993, y: 2.5426724}
   m_Direction: 0
+--- !u!1 &7034447251024004591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132666669924911771}
+  m_Layer: 2
+  m_Name: shootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &132666669924911771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034447251024004591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.89, y: -0.86, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4142889663103871614}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8085915359738264080
 PrefabInstance:
   m_ObjectHideFlags: 0

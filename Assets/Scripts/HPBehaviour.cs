@@ -8,7 +8,7 @@ public class HPBehaviour : MonoBehaviour
     public Sprite heart;
     public Sprite halfheart;
 
-    public Transform targetPoint;
+    private Transform targetPoint;
 
     public GameObject imagen;
 
@@ -28,6 +28,7 @@ public class HPBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        targetPoint = GameObject.Find("TargetPoint1").transform;
         sr = GetComponent<SpriteRenderer>();
         originalTint = sr.color;
         hearts = new List<GameObject>();
@@ -52,6 +53,7 @@ public class HPBehaviour : MonoBehaviour
 
     public void recalculateHP()
     {
+        targetPoint = GameObject.Find("TargetPoint1").transform;
         for (int i = 0; i < hearts.Count; i++)
         {
             Destroy(hearts[i]);

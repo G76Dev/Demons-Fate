@@ -25,6 +25,9 @@ public class MeleeEnemyIA : MonoBehaviour
     private bool preparing = false;
     private GameObject playerReference;
 
+    [SerializeField] float knockback;
+    [SerializeField] int dmg;
+
     [Tooltip("Rozamiento del knockback del jugador")] [SerializeField] float kFriction;
 
 
@@ -133,6 +136,14 @@ public class MeleeEnemyIA : MonoBehaviour
         else if(!inPush)
         {
              rb.velocity = new Vector3(0, 0);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<HPBehaviour>().damage(dmg, knockback, gameObject);
         }
     }
 }
