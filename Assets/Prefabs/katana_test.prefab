@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1090119012240038915}
   - component: {fileID: 8973086880830494452}
   m_Layer: 0
-  m_Name: katana_slash_0
+  m_Name: katana_test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 5178091957482349771, guid: 613fc6968a0bdcb41a4da5956ff0508d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,3 +141,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7dc9d3b82a59784a9e4980c00bb8ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 30
+  knockback: 0.35

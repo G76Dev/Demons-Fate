@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2561227998246853181}
   - component: {fileID: 257995444273904530}
   - component: {fileID: 7925103022125649386}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spikes
   m_TagString: dmgObstacle
   m_Icon: {fileID: 0}
@@ -137,3 +137,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objId: 1
   dimSize: 1
+  move: 1

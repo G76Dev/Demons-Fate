@@ -9,6 +9,7 @@ public class Size : MonoBehaviour
     public int move = 1;
     static List<Vector2Int> usedCells;
     static List<Vector2Int> usedCells_Big;
+    //static List<Vector2Int> usedCells_columna;
 
     public static void initializeUsedCells()
     {
@@ -114,6 +115,8 @@ public class Size : MonoBehaviour
         {
             case 4:
                 return usedCells_Big;
+            /*case 50:
+                return usedCells_columna;*/
             default:
                 return usedCells;
         }
