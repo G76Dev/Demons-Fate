@@ -13,9 +13,9 @@ public class Size : MonoBehaviour
     public static void initializeUsedCells()
     {
         usedCells = new List<Vector2Int>();
+        usedCells.Add(new Vector2Int(0, 0));
         usedCells_Big = new List<Vector2Int>();
         #region cells_Big
-        usedCells_Big.Add(new Vector2Int(0, 0));
         usedCells_Big.Add(new Vector2Int(-4, -4));
         usedCells_Big.Add(new Vector2Int(-3, -4));
         usedCells_Big.Add(new Vector2Int(-2, -4));
@@ -60,6 +60,7 @@ public class Size : MonoBehaviour
         usedCells_Big.Add(new Vector2Int(-3, 0));
         usedCells_Big.Add(new Vector2Int(-2, 0));
         usedCells_Big.Add(new Vector2Int(-1, 0));
+        usedCells_Big.Add(new Vector2Int(0, 0));
         usedCells_Big.Add(new Vector2Int(1, 0));
         usedCells_Big.Add(new Vector2Int(2, 0));
         usedCells_Big.Add(new Vector2Int(3, 0));

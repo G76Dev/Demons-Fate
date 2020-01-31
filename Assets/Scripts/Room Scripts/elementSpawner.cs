@@ -63,7 +63,7 @@ public class elementSpawner : MonoBehaviour
             rController.usedCells.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y + 3));
             rController.usedCells.Add(new Vector2Int((int)transform.position.x + 1, (int)transform.position.y + 3));
 
-            if(rController.currentRooms > rController.maxRooms)
+            if(rController.currentRooms >= rController.maxRooms)
             {
                 rController.usedCells.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y));
                 rController.usedCells.Add(new Vector2Int((int)transform.position.x + 1, (int)transform.position.y));
@@ -95,14 +95,10 @@ public class elementSpawner : MonoBehaviour
         centralElement = Instantiate(element, new Vector3Int(positionVector.x, positionVector.y, 0), Quaternion.identity, transform);
 
         //se añaden al hashset las casillas que ocupa el element
-        rController.usedCells.Add(positionVector);
         Size elementSize = element.GetComponent<Size>();
-        if (elementSize.getDimensions().Count > 1)
+        for (int i = 0; i < elementSize.getDimensions().Count; i++)
         {
-            for (int i = 1; i < elementSize.getDimensions().Count; i++)
-            {
-                rController.usedCells.Add(positionVector + elementSize.getDimensions()[i]);
-            }
+            rController.usedCells.Add(positionVector + elementSize.getDimensions()[i]);
         }
 
         if (element.CompareTag("Enemy")) { GameObject.Find("Canvas").GetComponent<PlayerInterface>().addEnemiesToKill(1); }
@@ -127,15 +123,10 @@ public class elementSpawner : MonoBehaviour
             moveRandomPos(ref positionVector, elementSize.move);
             counter++;
         }
-
         //se añaden al hashset las casillas que ocupa el element
-        rController.usedCells.Add(positionVector);
-        if (elementSize.dimSize > 1)
+        for (int i = 0; i < elementSize.dimSize; i++)
         {
-            for (int i = 1; i < elementSize.dimSize; i++)
-            {
-                rController.usedCells.Add(positionVector + elementSize.getDimensions()[i]);
-            }
+            rController.usedCells.Add(positionVector + elementSize.getDimensions()[i]);
         }
         return new Vector3Int(positionVector.x, positionVector.y, 0);
     }

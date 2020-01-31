@@ -16,6 +16,11 @@ public class EnemyGenericController : MonoBehaviour
     public bool movement;
 
     [HideInInspector]public Vector3 knockback;
+    [SerializeField] GameObject HitFX;
+    [SerializeField] Color tintWhenHit;
+    [SerializeField] float tintTime;
+    Color originalTint;
+    SpriteRenderer sr;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +28,9 @@ public class EnemyGenericController : MonoBehaviour
         alive = true;
         healthBar = GetComponentInChildren<HealthBar>();
         health = healthBar.health;
+
+        sr = GetComponent<SpriteRenderer>();
+        originalTint = sr.color;
     }
 
 
@@ -34,8 +42,12 @@ public class EnemyGenericController : MonoBehaviour
     public void takeDamage(int dmg)
     {
         health = health - dmg;
-        //dontMove();
         healthBar.changeHealth(-dmg);
+
+        Destroy(Instantiate(HitFX, this.transform.position, Quaternion.identity), 2);
+
+        sr.color = tintWhenHit;
+        StartCoroutine(restoreColor());
     }
 
     public void takeDamage(int dmg, float force, GameObject inflictor)
@@ -43,6 +55,12 @@ public class EnemyGenericController : MonoBehaviour
         takeDamage(dmg);
         Vector3 dir = transform.position - inflictor.transform.position;
         knockback = new Vector3(dir.normalized.x * force, dir.normalized.y * force, 0);
+    }
+
+    IEnumerator restoreColor()
+    {
+        yield return new WaitForSeconds(tintTime);
+        sr.color = originalTint;
     }
 
     // Update is called once per frame

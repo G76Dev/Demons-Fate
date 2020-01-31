@@ -103,6 +103,9 @@ MonoBehaviour:
   timeStopped: 2
   movement: 1
   knockback: {x: 0, y: 0, z: 0}
+  HitFX: {fileID: 9078814408047915560, guid: 77b8b9de9937fd84abbf062cecde81cd, type: 3}
+  tintWhenHit: {r: 0.7176471, g: 0.1254902, b: 0.1254902, a: 1}
+  tintTime: 0.12
 --- !u!114 &4142889663103871612
 MonoBehaviour:
   m_ObjectHideFlags: 0
