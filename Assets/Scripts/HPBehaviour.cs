@@ -18,9 +18,18 @@ public class HPBehaviour : MonoBehaviour
     public int actualHP;
     public int distanciaEntreCorazones;
 
+    [SerializeField] GameObject HitFX;
+    [SerializeField] float invulenrabilityTime;
+    Color originalTint;
+    SpriteRenderer sr;
+
+    [HideInInspector] public bool vulnerable = true;
+
     // Start is called before the first frame update
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
+        originalTint = sr.color;
         hearts = new List<GameObject>();
 
         hearts.Clear();
@@ -67,13 +76,53 @@ public class HPBehaviour : MonoBehaviour
 
     public void damage(int amount)
     {
+        StartCoroutine(InvulnerableTime());
+        sr.color = new Color(originalTint.r, originalTint.g, originalTint.b, 0.25f);
+        StartCoroutine(blinking2());
+
         actualHP -= amount;
         recalculateHP();
+        Destroy(Instantiate(HitFX, this.transform.position, Quaternion.identity), 2);
     }
     public void damage(int amount,float force, GameObject inflictor)
     {
-        damage(amount);
-        GetComponent<PlayerController>().knockBackPlayer(transform.position - inflictor.transform.position, force);
+        if (vulnerable)
+        {
+            damage(amount);
+            GetComponent<PlayerController>().knockBackPlayer(transform.position - inflictor.transform.position, force);
+        }
+    }
+    IEnumerator InvulnerableTime()
+    {
+        vulnerable = false;
+        yield return new WaitForSeconds(invulenrabilityTime);
+        vulnerable = true;
+    }
+    IEnumerator blinking1()
+    {
+        sr.color = new Color(originalTint.r, originalTint.g, originalTint.b, 0.25f);
+        yield return new WaitForSeconds(0.1f);
+        if (vulnerable)
+        {
+            sr.color = new Color(originalTint.r, originalTint.g, originalTint.b, 1);
+        }
+        else{
+            StartCoroutine(blinking2());
+        }
+    }
+
+    IEnumerator blinking2()
+    {
+        sr.color = new Color(originalTint.r, originalTint.g, originalTint.b, 1);
+        yield return new WaitForSeconds(0.1f);
+        if (vulnerable)
+        {
+            sr.color = new Color(originalTint.r, originalTint.g, originalTint.b, 1);
+        }
+        else
+        {
+            StartCoroutine(blinking1());
+        }
     }
 
     // Update is called once per frame
