@@ -71,7 +71,7 @@ public class StoryTextBehaviour : MonoBehaviour
         foreach (char c in sentence.ToCharArray())
         {
             textObject.GetComponent<Text>().text += c;
-            yield return null;
+            yield return new WaitForSeconds(0.03f);
             yield return null;
         }
 

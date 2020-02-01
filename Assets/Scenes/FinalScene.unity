@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -636,9 +636,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   story:
-  - Federico la chupa.
-  - Tu mama en tanga tambien.
-  - Y yo si es jueves, lo hago y gratis.
+  - Shall you be praised, sacred demon hunter!
+  - You fulfilled your mission without waver,
+  - without falling on profane temptation.
+  - '"And unclean spirits, when they saw him, '
+  - fell down before him, and cried, saying,
+  - Thou art the Son of God."
+  - Mark 3:11
   speed: 0
   textObject: {fileID: 127386542}
   "NextBot\xF3nText": {fileID: 973255488}
