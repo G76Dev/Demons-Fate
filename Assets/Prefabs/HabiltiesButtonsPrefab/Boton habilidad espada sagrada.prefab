@@ -79,7 +79,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Habilidad sagrada: Tu espada adquiere el poder de los dioses, permiti\xE9ndote
     devolver los disparos enemigos, y adquiriendo m\xE1s fuerza para empujar a los
-    demonios. No obstante, esto tambi\xE9n la vuelve m\xE1s lenta."
+    demonios.\n"
 --- !u!1 &233793847105642641
 GameObject:
   m_ObjectHideFlags: 0
