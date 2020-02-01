@@ -21,9 +21,9 @@ public class PlayerInterface : MonoBehaviour
         {
             addEnemiesToKill(2);
             initKillCount(1);
-        } else if (SceneManager.GetActiveScene().name == "Nivel final")
+        } else if (SceneManager.GetActiveScene().name == "Nivel Final")
         {
-            addEnemiesToKill(1);
+            addEnemiesToKill(2);
             initKillCount(1);
         }
     }
