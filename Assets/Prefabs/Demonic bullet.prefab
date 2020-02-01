@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5646271188270785382}
   - component: {fileID: 8005029440719284292}
   m_Layer: 0
-  m_Name: bullet
+  m_Name: Demonic bullet
   m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a527775c34a6dbc42890e524349cf026, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f72e8127e1c3a47458d80b7e63ed51a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -147,4 +147,4 @@ MonoBehaviour:
   knockback: 0.15
   hitFX: {fileID: 8635514372887387213, guid: 3889911e49d1a4a41b9f511453b1a352, type: 3}
   shootedByIA: 0
-  cooldown: 0.3
+  cooldown: 0.2

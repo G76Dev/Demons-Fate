@@ -12,10 +12,29 @@ public class shootingController : MonoBehaviour
     private float postMeleeCooldown = 3f;
     private bool canShoot;
     private bool attackingMelee;
-    [SerializeField] private float shootCooldown = 0.2f;
+    private float shootCooldown = 0.2f;
+
+    private PlayerController playerController;
+    [SerializeField] private GameObject demonicShootWeapon;
+    [SerializeField] private GameObject sacredShootWeapon;
+    [SerializeField] private GameObject DemonicBulletPrefab;
+    [SerializeField] private GameObject SacredBulletPrefab;
+    private GameObject defaultWeapon;
+    private GameObject defaultBullet;
+
+    Quaternion d1 = Quaternion.Euler(new Vector3(0, 0, 15));
+    Quaternion d2 = Quaternion.Euler(new Vector3(0, 0, 30));
+    Quaternion d3 = Quaternion.Euler(new Vector3(0, 0, 45));
+    Quaternion d4 = Quaternion.Euler(new Vector3(0, 0, -15));
+    Quaternion d5 = Quaternion.Euler(new Vector3(0, 0, -30));
+    Quaternion d6 = Quaternion.Euler(new Vector3(0, 0, -45));
+
+    private bool auxDem = false, auxSac = false;
 
     public AudioSource audioSource;
     public AudioClip[] shootSounds;
+
+    private Sprite defaultSprite;
 
     //SISTEMA DE EVENTOS Y DELEGATES
 
@@ -34,8 +53,15 @@ public class shootingController : MonoBehaviour
     {
         canShoot = true;
         attackingMelee = false;
-
+        shootCooldown = bulletPrefab.GetComponent<bulletBehaviour>().cooldown;
         postMeleeCooldown = GetComponent<meleeController>().weaponPrefab.GetComponent<slashBehaviour>().postMeleeCd;
+        playerController = GetComponent<PlayerController>();
+
+        defaultSprite = weaponPrefab.GetComponent<SpriteRenderer>().sprite;
+        defaultBullet = bulletPrefab;
+
+        //weaponPrefab.GetComponent<SpriteRenderer>().sprite = demonicShootWeapon.GetComponent<SpriteRenderer>().sprite;
+        //bulletPrefab = DemonicBulletPrefab;
     }
 
     // Update is called once per frame
@@ -45,10 +71,38 @@ public class shootingController : MonoBehaviour
         {
             Shoot();
         }
+
+        if (playerController.DemonicShooter)
+        {
+            weaponPrefab.GetComponent<SpriteRenderer>().sprite = demonicShootWeapon.GetComponent<SpriteRenderer>().sprite;
+            bulletPrefab = DemonicBulletPrefab;
+            auxDem = true;
+        }
+        if (playerController.SacredShooter)
+        {
+            auxSac = true;
+            weaponPrefab.GetComponent<SpriteRenderer>().sprite = sacredShootWeapon.GetComponent<SpriteRenderer>().sprite;
+            bulletPrefab = SacredBulletPrefab;
+        }
+        if (playerController.eliminateDemonic)
+        {
+            if (auxSac)
+            {
+                weaponPrefab.GetComponent<SpriteRenderer>().sprite = sacredShootWeapon.GetComponent<SpriteRenderer>().sprite;
+                bulletPrefab = SacredBulletPrefab;
+            }
+            else
+            {
+                weaponPrefab.GetComponent<SpriteRenderer>().sprite = defaultSprite;
+                bulletPrefab = defaultBullet;
+            }
+        }
     }
 
     private void Shoot()
     {
+        shootCooldown = bulletPrefab.GetComponent<bulletBehaviour>().cooldown;
+
         int random = UnityEngine.Random.Range(0, 4);
         audioSource.PlayOneShot(shootSounds[random]);
 
@@ -58,6 +112,20 @@ public class shootingController : MonoBehaviour
         canShoot = false;
         StartCoroutine(cooldown(shootCooldown));
 
+        if (playerController.DemonicShooter)
+        {
+            GameObject bulletExtra = Instantiate(bulletPrefab, weaponPrefab.transform.position, Quaternion.Euler(weaponPrefab.transform.rotation.eulerAngles - d2.eulerAngles));
+            rb2d = bulletExtra.GetComponent<Rigidbody2D>();
+            rb2d.AddForce(bulletExtra.transform.up * bulletForce, ForceMode2D.Impulse);
+            canShoot = false;
+            StartCoroutine(cooldown(shootCooldown));
+
+            bulletExtra = Instantiate(bulletPrefab, weaponPrefab.transform.position, Quaternion.Euler(weaponPrefab.transform.rotation.eulerAngles + d2.eulerAngles));
+            rb2d = bulletExtra.GetComponent<Rigidbody2D>();
+            rb2d.AddForce(bulletExtra.transform.up * bulletForce, ForceMode2D.Impulse);
+            canShoot = false;
+            StartCoroutine(cooldown(shootCooldown));
+        }
 
     }
 

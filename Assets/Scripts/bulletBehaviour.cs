@@ -9,6 +9,8 @@ public class bulletBehaviour : MonoBehaviour
     [SerializeField] GameObject hitFX;
     public bool shootedByIA = false;
 
+    public float cooldown;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         /*if ((!shootedByIA || collision.gameObject.tag != "Enemy"))
