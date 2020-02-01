@@ -49,7 +49,8 @@ public class ShootingEnemyIA : MonoBehaviour
 
         shootingTimer += Time.deltaTime;
 
-        distance = playerReference.transform.position - transform.position;
+        if (playerReference != null)
+            distance = playerReference.transform.position - transform.position;
         direction = Vector3.Normalize(distance);
         //Debug.Log("X: " + direction.x + " Y: " + direction.y + " Z: " + direction.z);
 

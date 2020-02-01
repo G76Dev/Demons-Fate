@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   increaseMaxHP: 0
+  player: {fileID: 0}
 --- !u!1 &295968377
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   increaseMaxHP: 0
+  player: {fileID: 0}
 --- !u!114 &504466623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,7 +1359,7 @@ MonoBehaviour:
   centralChance: 0.5
   maxRooms: 0
   currentRooms: 0
-  maxRoomsMean: 4
+  maxRoomsMean: 10
   maxRoomsVariance: 0
   downRooms:
   - {fileID: 8514909665589551085, guid: 3f6e98209cd45ac4e96c0fc4f53b6bf8, type: 3}
@@ -1392,6 +1394,7 @@ MonoBehaviour:
   - {fileID: 6711666053545253172, guid: 6fc2e589fd151ea45a7f53042e2ec552, type: 3}
   - {fileID: 1114336859491515812, guid: 7a36825876fd0e1418ac5d17d46fb452, type: 3}
   block: {fileID: 9017658736492948929, guid: aab94698cc31b6641993dc583e61d912, type: 3}
+  topWall: {fileID: 3770720959855522121, guid: c83fc04080db9e94b81dd36fd772cfa4, type: 3}
   ending: {fileID: 8490617231769518110, guid: c640abf1802b5764a8a1b112a5b43887, type: 3}
   lastRoom: {fileID: 0}
   canInitLastRoom: 1
@@ -1787,6 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   increaseMaxHP: 0
+  player: {fileID: 0}
 --- !u!114 &1781783135
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,7 +46,8 @@ public class MeleeEnemyIA : MonoBehaviour
     {
         this.movement = egc.movement;
 
-        distance = playerReference.transform.position - transform.position;
+        if (playerReference != null)
+            distance = playerReference.transform.position - transform.position;
         direction = Vector3.Normalize(distance);
 
         if (distance.magnitude <= 0 && distance.magnitude < -maximunDistance && distance.magnitude >= -detectDistance && detected && !preparing && !inPush && movement) //Si el jugador está en el rango de vision del enemigo, el enemigo le persigue
@@ -139,7 +140,7 @@ public class MeleeEnemyIA : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {

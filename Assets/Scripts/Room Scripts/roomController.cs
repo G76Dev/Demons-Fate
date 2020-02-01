@@ -27,6 +27,7 @@ public class roomController : MonoBehaviour
     public GameObject[] rightRooms;
     public GameObject[] leftRooms;
     public GameObject block;
+    public GameObject topWall;
     public GameObject ending;
     [HideInInspector] public GameObject lastRoom;
     [HideInInspector] public bool canInitLastRoom = true;

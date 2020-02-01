@@ -157,6 +157,6 @@ public class HPBehaviour : MonoBehaviour
         Debug.Log("Muerte");
         Time.timeScale = 0;
         GameObject.Find("Death background").GetComponent<Animator>().Play("HSIn");
-
+        Destroy(gameObject);
     }
 }

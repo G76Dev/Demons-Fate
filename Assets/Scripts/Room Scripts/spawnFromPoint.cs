@@ -56,6 +56,11 @@ public class spawnFromPoint : MonoBehaviour
             else
             {
                 var blockInstance = Instantiate(rController.block, transform.position, Quaternion.identity, transformRoomController);
+                if(openingDirection == 2)
+                {
+                    var auxWall = Instantiate(rController.topWall, new Vector3(transform.position.x, transform.position.y - 10.55f, transform.position.z), Quaternion.identity, transformRoomController);
+                    auxWall.transform.localScale = new Vector3(1.578f, 1.85f, 1);
+                }
                 //blockInstance.GetComponent<Rigidbody2D>().WakeUp();
             }
         }
