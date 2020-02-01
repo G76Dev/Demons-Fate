@@ -42,4 +42,11 @@ public class bulletBehaviour : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void buff()
+    {
+        damage += damage/2;
+        transform.localScale = transform.localScale * 1.75f;
+        knockback += 0.05f;
+    }
+
 }

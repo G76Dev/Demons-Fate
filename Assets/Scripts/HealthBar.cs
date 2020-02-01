@@ -45,6 +45,11 @@ public class HealthBar : MonoBehaviour
         bar.localScale = new Vector3((float)h / (float)mH, transform.localScale.y, transform.localScale.z);
     }
 
+    private void Update()
+    {
+        transform.localScale = new Vector3((transform.parent.localScale.x > 0) ? 1 : -1, 1, 1);
+    }
+
     /*private void Start()
     {
         StartCoroutine(test());

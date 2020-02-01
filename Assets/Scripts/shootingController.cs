@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class shootingController : MonoBehaviour
 {
-
     [Tooltip("Referencia al objeto del arma a distancia")] public GameObject weaponPrefab;
     [Tooltip("Referencia al objeto de la bala")] [SerializeField] private GameObject bulletPrefab;
 
     [SerializeField] private float bulletForce = 29f;
-    [Tooltip("Cantidad de tiempo que el jugador pasa sin poder disparar tras un ataque cuerpo a cuerpo")] [SerializeField] private float postMeleeCooldown = 3f;
+    private float postMeleeCooldown = 3f;
     private bool canShoot;
     private bool attackingMelee;
     [SerializeField] private float shootCooldown = 0.2f;
@@ -35,6 +34,8 @@ public class shootingController : MonoBehaviour
     {
         canShoot = true;
         attackingMelee = false;
+
+        postMeleeCooldown = GetComponent<meleeController>().weaponPrefab.GetComponent<slashBehaviour>().postMeleeCd;
     }
 
     // Update is called once per frame
@@ -67,7 +68,7 @@ public class shootingController : MonoBehaviour
             attackingMelee = true;
             float attack_duration = GetComponent<meleeController>().getSlashDuration();
             Debug.Log(attack_duration);
-            StartCoroutine(cooldownMelee(attack_duration * 3F));
+            StartCoroutine(cooldownMelee(attack_duration + postMeleeCooldown));
         }
     }
 

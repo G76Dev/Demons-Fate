@@ -144,4 +144,5 @@ MonoBehaviour:
   knockback: 0.4
   cooldown: 0.5
   thrust: 0.9
+  postMeleeCd: -0.5
   bulletInterac: 2

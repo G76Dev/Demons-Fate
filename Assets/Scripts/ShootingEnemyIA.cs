@@ -101,11 +101,11 @@ public class ShootingEnemyIA : MonoBehaviour
 
         if(distance.x >= 0 && distance.magnitude <= detectDistance && detected)
         {
-            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
         if (distance.x < 0 && distance.magnitude <= detectDistance && detected)
         {
-            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
         //fisicas adicionales de knockback

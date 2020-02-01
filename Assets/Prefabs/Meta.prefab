@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8490617231769518111}
   - component: {fileID: 8490617231769518109}
   - component: {fileID: 3428720566086834871}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Meta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,3 +120,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455fcfbe36a558d42a337b551e5c74d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemysKilled: 0

@@ -10,6 +10,7 @@ public class slashBehaviour : MonoBehaviour
     [Tooltip("Retroceso causado a los enemigos que daña este arma")] [SerializeField] float knockback = 0.35f;
     [Tooltip("Cooldown entre ataque y ataque")][SerializeField] float cooldown = 0.2f;
     [Tooltip("Cantidad de espacio que avanza el jugador al atacar en una direccion con este arma")] [SerializeField] float thrust = 1;
+    [Tooltip("Cantidad de tiempo que el jugador pasa sin poder disparar tras un ataque cuerpo a cuerpo")] public float postMeleeCd = 1.0f;
 
 
     [Tooltip("0->destruye balas, 1->no hace nada con las balas, 2->refleja balas")] [SerializeField] int bulletInterac = 0;
@@ -59,7 +60,14 @@ public class slashBehaviour : MonoBehaviour
             else if(bulletInterac == 2)
             {
                 collision.GetComponent<Rigidbody2D>().AddForce(transform.parent.gameObject.GetComponent<PlayerController>().mouseVector.normalized * 15, ForceMode2D.Impulse);
-                collision.gameObject.GetComponent<bulletBehaviour>().shootedByIA = false;
+                if (collision.gameObject.GetComponent<bulletBehaviour>().shootedByIA)
+                {
+                    collision.gameObject.GetComponent<bulletBehaviour>().shootedByIA = false;
+                }
+                else
+                {
+                    collision.gameObject.GetComponent<bulletBehaviour>().buff();
+                }
                 collision.gameObject.transform.localScale = new Vector3(collision.gameObject.transform.localScale.x, -collision.gameObject.transform.localScale.y, 1);
                 collision.gameObject.transform.rotation = transform.parent.gameObject.GetComponent<shootingController>().weaponPrefab.transform.rotation;
                 collision.gameObject.transform.localScale = -collision.gameObject.transform.localScale;
