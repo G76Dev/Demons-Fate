@@ -110,7 +110,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ad35371b50baad24a80382fda9e6bb9c, type: 3}
   audioSource: {fileID: 1381750180}
   slashPoint: {fileID: 1913787925492368054}
-  weaponPrefab: {fileID: 7643119461130814592, guid: 43eade1da9124f3478d7a01142d2cae2,
+  weaponPrefab: {fileID: 7643119461130814592, guid: f961de1a0d37f0548bdf5667bfdeaadf,
     type: 3}
 --- !u!114 &2855001974512527405
 MonoBehaviour:
@@ -131,6 +131,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dc046fc1565c4eb4ea6c8f4445b61cb5, type: 3}
   - {fileID: 8300000, guid: 104aefd56b52c614eb70f159b14b5e7d, type: 3}
   audioSource: {fileID: 1381750180}
+  death: {fileID: 0}
   heart: {fileID: 21300000, guid: b292625edde7bcf4abe8f4a9568a0760, type: 3}
   halfheart: {fileID: 21300000, guid: e7f456a55b57aa044a4ca5f2ce9a0736, type: 3}
   imagen: {fileID: 2737625153345879497, guid: 2aec3866adfdcb048b7560708872fed4, type: 3}
