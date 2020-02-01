@@ -9,7 +9,7 @@ public class HabilityButtonBehaviour : MonoBehaviour
     [SerializeField] AudioSource audioSource;
 
     [SerializeField] int increaseMaxHP;
-    public GameObject player;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -44,10 +44,6 @@ public class HabilityButtonBehaviour : MonoBehaviour
 
         Time.timeScale = 1;
 
-        if(gameObject.name == "Hability 2")
-        {
-           player.GetComponent<PlayerController>().demonicHabilities++;
-        }
 
         switch (SceneManager.GetActiveScene().name)
         {
@@ -67,6 +63,9 @@ public class HabilityButtonBehaviour : MonoBehaviour
                 SceneManager.LoadScene("Nivel Final");
                 break;
             case "FinalScene":
+                SceneManager.LoadScene("Menu");
+                break;
+            case "FinalSceneBad":
                 SceneManager.LoadScene("Menu");
                 break;
         }
@@ -96,23 +95,30 @@ public class HabilityButtonBehaviour : MonoBehaviour
     public void ProfaneHealing()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Habilidades D escogidas : " + player.GetComponent<PlayerController>().demonicHabilities);
         Debug.Log("Profane healing");
         player.GetComponent<HPBehaviour>().maxHP += increaseMaxHP;
         player.GetComponent<HPBehaviour>().actualHP = player.GetComponent<HPBehaviour>().maxHP;
         player.GetComponent<HPBehaviour>().recalculateHP();
         player.GetComponent<PlayerController>().demonicHabilities++;
         player.GetComponent<PlayerController>().profaneHealing = true;
-
+        player.GetComponent<PlayerController>().demonicHabilities++;
     }
 
     public void activateDemonicSword()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().demonicHabilities++;
+        Debug.Log("Habilidades D escogidas : " + player.GetComponent<PlayerController>().demonicHabilities);
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerController>().DemonicSword = true;
         player.GetComponent<PlayerController>().SacredSword = false;
     }
     public void activateDemonicShooter()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().demonicHabilities++;
+        Debug.Log("Habilidades D escogidas : " + player.GetComponent<PlayerController>().demonicHabilities);
         Debug.Log("Has adquirido el disparo demoníaco");
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerController>().DemonicShooter = true;

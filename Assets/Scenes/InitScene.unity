@@ -96,8 +96,9 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -326,7 +327,6 @@ MonoBehaviour:
   enterSound: {fileID: 0}
   audioSource: {fileID: 0}
   increaseMaxHP: 0
-  player: {fileID: 0}
 --- !u!1 &490856978
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +534,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a1b9ed4547790d247a4ec7552ef2d1ee, type: 3}
     m_FontSize: 32
     m_FontStyle: 1
     m_BestFit: 0
@@ -613,7 +613,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a1b9ed4547790d247a4ec7552ef2d1ee, type: 3}
     m_FontSize: 32
     m_FontStyle: 1
     m_BestFit: 0
@@ -751,7 +751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.541687, y: 80.00006}
+  m_AnchoredPosition: {x: 10.541748, y: 80.00006}
   m_SizeDelta: {x: -487.69995, y: -173.69995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580298355
@@ -773,7 +773,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a1b9ed4547790d247a4ec7552ef2d1ee, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
@@ -786,8 +786,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Eres un cazador de demonios, el m\xE1s poderoso, enviado por los dioses,
-    y todas esas cosas guays que se suelen decir en estos casos. Pero mira, eres un
-    tipo, que va a cazar demonios, as\xED que ve y caza. Matalos a todos. Y luego
+    y todas esas cosas guays que se suelen decir en estos casos. Pero mira, eres
+    un tipo, que va a cazar demonios, as\xED que ve y caza. Matalos a todos. Y luego
     hablamos."
 --- !u!222 &1580298356
 CanvasRenderer:
@@ -1018,7 +1018,6 @@ MonoBehaviour:
   enterSound: {fileID: 0}
   audioSource: {fileID: 0}
   increaseMaxHP: 0
-  player: {fileID: 0}
 --- !u!114 &1834620102
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StoryTextBehaviour : MonoBehaviour
 {
@@ -49,9 +50,13 @@ public class StoryTextBehaviour : MonoBehaviour
             }  
         
 
-        if (sentences.Count==0)
+        if (sentences.Count==0 && SceneManager.GetActiveScene().name.Equals("InitScene"))
         {
             NextBotónText.GetComponent<Text>().text = "PLAY";
+        }
+        else if(sentences.Count == 0)
+        {
+            NextBotónText.GetComponent<Text>().text = "RETURN";
         }
 
         GameObject myEventSystem = GameObject.Find("EventSystem");

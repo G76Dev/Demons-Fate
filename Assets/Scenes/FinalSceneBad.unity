@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -176,7 +177,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a1b9ed4547790d247a4ec7552ef2d1ee, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
@@ -189,8 +190,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Eres un cazador de demonios, el m\xE1s poderoso, enviado por los dioses,
-    y todas esas cosas guays que se suelen decir en estos casos. Pero mira, eres un
-    tipo, que va a cazar demonios, as\xED que ve y caza. Matalos a todos. Y luego
+    y todas esas cosas guays que se suelen decir en estos casos. Pero mira, eres
+    un tipo, que va a cazar demonios, as\xED que ve y caza. Matalos a todos. Y luego
     hablamos."
 --- !u!222 &127386545
 CanvasRenderer:
@@ -378,7 +379,6 @@ MonoBehaviour:
   enterSound: {fileID: 0}
   audioSource: {fileID: 0}
   increaseMaxHP: 0
-  player: {fileID: 0}
 --- !u!114 &278478092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,7 +614,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a1b9ed4547790d247a4ec7552ef2d1ee, type: 3}
     m_FontSize: 32
     m_FontStyle: 1
     m_BestFit: 0
@@ -693,7 +693,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a1b9ed4547790d247a4ec7552ef2d1ee, type: 3}
     m_FontSize: 32
     m_FontStyle: 1
     m_BestFit: 0
@@ -1007,7 +1007,6 @@ MonoBehaviour:
   enterSound: {fileID: 0}
   audioSource: {fileID: 0}
   increaseMaxHP: 0
-  player: {fileID: 0}
 --- !u!114 &1834620102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,7 +1025,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1834620101}
-          m_MethodName: onPointerIn
+          m_MethodName: PlayEnterSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

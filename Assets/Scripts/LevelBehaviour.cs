@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class LevelBehaviour : MonoBehaviour
 {
     //Estas 2 listas se deben llenar cada una con las habilidades que se quieran en el juego. Cada lista debe tener solo habilidades del tipo correspondiente para garantizar que siempre aparece una opcion de cada una.
@@ -46,7 +46,7 @@ public class LevelBehaviour : MonoBehaviour
         int index1 = Random.Range(0, sacredHabilities.Count);
         int index2 = Random.Range(0, profaneHabilities.Count);
 
-        if (sacredHabilities[index1] != null && profaneHabilities[index2] != null)
+        if (sacredHabilities.Count != 0 && profaneHabilities.Count != 0)
         {
             hability1.GetComponent<Text>().text = sacredHabilities[index1].GetComponent<Text>().text;
             hability1.GetComponentInChildren<Image>().sprite = sacredHabilities[index1].GetComponentInChildren<Image>().sprite;
@@ -64,12 +64,39 @@ public class LevelBehaviour : MonoBehaviour
         }
         else
         {
+            nextLevel();
             Debug.Log("No quedan habilidades");
-        }
-        
-
+        }      
     }
-    
+
+    public void nextLevel()
+    {
+
+        Time.timeScale = 1;
+
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Nivel tutorial":
+                SceneManager.LoadScene("Nivel 1");
+                break;
+            case "InitScene":
+                SceneManager.LoadScene("Nivel tutorial");
+                break;
+            case "Nivel 1":
+                SceneManager.LoadScene("Nivel 2");
+                break;
+            case "Nivel 2":
+                SceneManager.LoadScene("Nivel 3");
+                break;
+            case "Nivel 3":
+                SceneManager.LoadScene("Nivel Final");
+                break;
+            case "FinalScene":
+                SceneManager.LoadScene("Menu");
+                break;
+        }
+    }
+
     public void test()
     {
         Debug.Log("Funciona");
