@@ -89,7 +89,7 @@ MonoBehaviour:
   eliminateDemonic: 0
   SacredShooter: 0
   audioSource: {fileID: 1381750180}
-  step: {fileID: 8300000, guid: 11d0c878b325e1c4980b9e6cfb9251e7, type: 3}
+  step: {fileID: 8300000, guid: e68a577c55287d14ebab820b2a693573, type: 3}
   speed: 7.5
   weaponDistance: 1.15
   bladeDistance: 1.5

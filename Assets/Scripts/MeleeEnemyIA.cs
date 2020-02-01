@@ -38,6 +38,7 @@ public class MeleeEnemyIA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource.volume = 0.2f;
         animator = GetComponent<Animator>();
         enemyController = GetComponent<EnemyGenericController>();
         rb = GetComponent<Rigidbody2D>();

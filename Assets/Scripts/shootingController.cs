@@ -51,6 +51,7 @@ public class shootingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource.volume = 0.2f;
         canShoot = true;
         attackingMelee = false;
         shootCooldown = bulletPrefab.GetComponent<bulletBehaviour>().cooldown;
