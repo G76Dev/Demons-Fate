@@ -92,11 +92,11 @@ public class HPBehaviour : MonoBehaviour
     }
     public void damage(int amount,float force, GameObject inflictor)
     {
-        int random = UnityEngine.Random.Range(0, 4);
-        audioSource.PlayOneShot(impactAudios[random]);
 
         if (vulnerable)
         {
+            int random = UnityEngine.Random.Range(0, 4);
+            audioSource.PlayOneShot(impactAudios[random]);
             damage(amount);
             GetComponent<PlayerController>().knockBackPlayer(transform.position - inflictor.transform.position, force);
         }

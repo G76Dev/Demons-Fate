@@ -108,7 +108,8 @@ public class elementSpawner : MonoBehaviour
     {
         for(int i=0; i<amount; i++)
         {
-            Instantiate(element, getRandomPosition(element), Quaternion.identity, transform);
+            var elementInstance = Instantiate(element, getRandomPosition(element), Quaternion.identity, transform);
+            elementInstance.transform.localScale = new Vector3((Random.Range(0f,1f)>0.5f)? elementInstance.transform.localScale.x : -elementInstance.transform.localScale.x, elementInstance.transform.localScale.y, elementInstance.transform.localScale.z);
         }
         if (element.CompareTag("Enemy")) { GameObject.Find("Canvas").GetComponent<PlayerInterface>().addEnemiesToKill(amount); }
     }

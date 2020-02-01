@@ -2,20 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerInterface : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] Text killCountText;
+    [SerializeField] Color flashColor;
+    Color originalColor;
     int killCount;
     int enemiesToKill;
     MetaBehaviour metaBehaviour;
     void Start()
     {
+        originalColor = killCountText.color;
         killCountText.text = "";
+        if (SceneManager.GetActiveScene().name == "Nivel tutorial")
+        {
+            addEnemiesToKill(2);
+            initKillCount(1);
+        } else if (SceneManager.GetActiveScene().name == "Nivel final")
+        {
+            addEnemiesToKill(1);
+            initKillCount(1);
+        }
     }
 
- 
+    public void flashKillCount()
+    {
+
+    }
 
     public void addEnemiesToKill(int n)
     {

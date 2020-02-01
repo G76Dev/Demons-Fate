@@ -27,6 +27,7 @@ public class MeleeEnemyIA : MonoBehaviour
     private bool inPush = false;
     private bool preparing = false;
     private GameObject playerReference;
+    private Animator animator;
 
     [SerializeField] float knockback;
     [SerializeField] int dmg;
@@ -37,6 +38,7 @@ public class MeleeEnemyIA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         enemyController = GetComponent<EnemyGenericController>();
         rb = GetComponent<Rigidbody2D>();
         playerReference = GameObject.Find("Player");
@@ -58,12 +60,14 @@ public class MeleeEnemyIA : MonoBehaviour
             attackTimer = 0;
             rb.velocity = direction * speed;
             inPush = false;
+            animator.SetBool("hasNoticedPlayer", true);
         }
         else if (distance.magnitude > 0 && distance.magnitude > maximunDistance && distance.magnitude <= detectDistance && detected && !preparing && !inPush && movement) //Si el jugador está en el rango de vision del enemigo,
         {
             attackTimer = 0;
             rb.velocity = direction * speed;
             inPush = false;
+            animator.SetBool("hasNoticedPlayer", true);
         }
         else if (distance.magnitude > 0 && distance.magnitude <= maximunDistance && detected && !inPush && movement) //Si el jugador está en el rango de visión del enemigo, y demasiado cerca, el enemigo embiste.
         {
@@ -80,6 +84,16 @@ public class MeleeEnemyIA : MonoBehaviour
         {
             rb.velocity = new Vector3(0, 0);
             inPush = false;
+            animator.SetBool("hasNoticedPlayer", false);
+        }
+
+        if (distance.x >= 0 && distance.magnitude <= detectDistance && detected)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        if (distance.x < 0 && distance.magnitude <= detectDistance && detected)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
         if (!movement)
@@ -87,6 +101,7 @@ public class MeleeEnemyIA : MonoBehaviour
             inPush = false;
             preparing = false;
             attackTimer = 0;
+            animator.SetBool("hasNoticedPlayer", false);
         }
 
 
@@ -98,6 +113,11 @@ public class MeleeEnemyIA : MonoBehaviour
                 timerPush = 0;
                 inPush = false;
             }
+            animator.SetBool("isCharging", true);
+        }
+        else
+        {
+            animator.SetBool("isCharging", false);
         }
 
         //fisicas adicionales de knockback
@@ -128,6 +148,7 @@ public class MeleeEnemyIA : MonoBehaviour
     void attack()
     {
         preparing = true;
+        animator.SetBool("isPreparing", true);
         attackTimer += Time.deltaTime;
         if (attackTimer >= attackTime)
         {
@@ -137,6 +158,7 @@ public class MeleeEnemyIA : MonoBehaviour
                 audioSource.PlayOneShot(embestidaAudios[random]);
             }
 
+            animator.SetBool("isPreparing", false);
             preparing = false;
             Debug.Log("Embestida");
             attackTimer = 0;
