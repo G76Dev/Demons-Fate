@@ -7,6 +7,9 @@ public class ShootingEnemyIA : MonoBehaviour
 {
     EnemyGenericController enemyController;
 
+    public AudioSource audioSource;
+    public AudioClip[] shootSounds;
+
     public float speed;
     public float detectDistance;
     public float maximunDistance;
@@ -56,6 +59,9 @@ public class ShootingEnemyIA : MonoBehaviour
             {
                        
                 GameObject bulletIn = Instantiate(bullet, shootingPoint.position, Quaternion.identity);
+
+                int random = UnityEngine.Random.Range(0, 4);
+                audioSource.PlayOneShot(shootSounds[random]);
 
                 // bulletIn.transform.LookAt(playerReference.transform);
                 float angle = Mathf.Atan2(distance.y, distance.x) * Mathf.Rad2Deg;

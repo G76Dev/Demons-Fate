@@ -22,6 +22,9 @@ public class EnemyGenericController : MonoBehaviour
     Color originalTint;
     SpriteRenderer sr;
 
+    [SerializeField] AudioClip[] impactAudios;
+    [SerializeField] AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +44,9 @@ public class EnemyGenericController : MonoBehaviour
 
     public void takeDamage(int dmg)
     {
+        int random = UnityEngine.Random.Range(0, 4);
+        audioSource.PlayOneShot(impactAudios[random]);
+
         health = health - dmg;
         healthBar.changeHealth(-dmg);
 

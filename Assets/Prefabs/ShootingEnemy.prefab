@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 9086527973024120920}
   - component: {fileID: 2241881620981909556}
   - component: {fileID: 8856934027364694675}
+  - component: {fileID: -9169268522549528173}
   m_Layer: 2
   m_Name: ShootingEnemy
   m_TagString: Enemy
@@ -107,6 +108,13 @@ MonoBehaviour:
   HitFX: {fileID: 9078814408047915560, guid: 77b8b9de9937fd84abbf062cecde81cd, type: 3}
   tintWhenHit: {r: 0.7176471, g: 0.1254902, b: 0.1254902, a: 1}
   tintTime: 0.12
+  impactAudios:
+  - {fileID: 8300000, guid: af270ec523c7a1d4e9cd74b634fed2c9, type: 3}
+  - {fileID: 8300000, guid: 78a88a809228d4a46a654d2b5396b59f, type: 3}
+  - {fileID: 8300000, guid: 11d0c878b325e1c4980b9e6cfb9251e7, type: 3}
+  - {fileID: 8300000, guid: dc046fc1565c4eb4ea6c8f4445b61cb5, type: 3}
+  - {fileID: 8300000, guid: 104aefd56b52c614eb70f159b14b5e7d, type: 3}
+  audioSource: {fileID: -9169268522549528173}
 --- !u!114 &4142889663103871612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +127,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2933179b33d16af49b0c7d5b47f9c25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: -9169268522549528173}
+  shootSounds:
+  - {fileID: 8300000, guid: d2315a30ac4f81349a33ad8ed07f1430, type: 3}
+  - {fileID: 8300000, guid: d248b64322b94774fbe571c266bcb6d8, type: 3}
+  - {fileID: 8300000, guid: 3d7b105bc969a3147ace6dd05e83fcf9, type: 3}
+  - {fileID: 8300000, guid: 4b1d5a199e85f8e42a2998f700dda5e2, type: 3}
+  - {fileID: 8300000, guid: d61850ec091b16b4e97b7374d743e1ff, type: 3}
   speed: 2
   detectDistance: 13
   maximunDistance: 5
@@ -199,6 +214,102 @@ CapsuleCollider2D:
   m_Offset: {x: 0.025136948, y: -0.25533044}
   m_Size: {x: 1.2810993, y: 2.5426724}
   m_Direction: 0
+--- !u!82 &-9169268522549528173
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4142889663103871611}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7034447251024004591
 GameObject:
   m_ObjectHideFlags: 0

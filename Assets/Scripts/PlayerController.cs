@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip step;
+
     Rigidbody2D rb;
     [Header("Player Variables")]
     [Tooltip("Velocidad de movimiento del jugador")] [SerializeField] float speed;
@@ -130,5 +133,10 @@ public class PlayerController : MonoBehaviour
         }
 
         transform.position += knockback;
+    }
+
+    public void reproduceStep()
+    {
+        audioSource.PlayOneShot(step);
     }
 }

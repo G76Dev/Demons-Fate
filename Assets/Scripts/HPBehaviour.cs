@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class HPBehaviour : MonoBehaviour
 {
+    [SerializeField] AudioClip[] impactAudios;
+    [SerializeField] AudioSource audioSource;
+
     public Sprite heart;
     public Sprite halfheart;
 
@@ -88,6 +91,9 @@ public class HPBehaviour : MonoBehaviour
     }
     public void damage(int amount,float force, GameObject inflictor)
     {
+        int random = UnityEngine.Random.Range(0, 4);
+        audioSource.PlayOneShot(impactAudios[random]);
+
         if (vulnerable)
         {
             damage(amount);

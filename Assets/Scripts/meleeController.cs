@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class meleeController : MonoBehaviour
 {
+    [SerializeField] AudioClip[] swordAudios;
+    [SerializeField] AudioSource audioSource;
+
     [Tooltip("Punto invisible donde se instancia el ataque")] [SerializeField] private Transform slashPoint;
     [Tooltip("Prefab del arma, que contiene sus atributos")] public GameObject weaponPrefab;
     private bool canAttack;
@@ -42,6 +45,9 @@ public class meleeController : MonoBehaviour
     {
         if (canAttack)
         {
+            int random = UnityEngine.Random.Range(0, 3);
+            audioSource.PlayOneShot(swordAudios[random]);
+
             if (slashDirection)
             { //si el booleano es true, ataca en una direccion
                 GameObject slash = Instantiate(weaponPrefab, slashPoint.position, slashPoint.rotation, this.transform);

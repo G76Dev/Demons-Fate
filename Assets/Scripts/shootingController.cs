@@ -15,6 +15,9 @@ public class shootingController : MonoBehaviour
     private bool attackingMelee;
     [SerializeField] private float shootCooldown = 0.2f;
 
+    public AudioSource audioSource;
+    public AudioClip[] shootSounds;
+
     //SISTEMA DE EVENTOS Y DELEGATES
 
     void OnEnable() //Subscribe la funcion al evento cuando se crea este objeto
@@ -45,6 +48,8 @@ public class shootingController : MonoBehaviour
 
     private void Shoot()
     {
+        int random = UnityEngine.Random.Range(0, 4);
+        audioSource.PlayOneShot(shootSounds[random]);
 
         GameObject bullet = Instantiate(bulletPrefab, weaponPrefab.transform.position, weaponPrefab.transform.rotation);
         Rigidbody2D rb2d = bullet.GetComponent<Rigidbody2D>();
