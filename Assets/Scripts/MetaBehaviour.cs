@@ -6,6 +6,15 @@ using UnityEngine.SceneManagement;
 public class MetaBehaviour : MonoBehaviour
 {
     public bool enemysKilled = false;
+    [SerializeField] Sprite metaSprite;
+
+    private void Update()
+    {
+        if (enemysKilled)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = metaSprite;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

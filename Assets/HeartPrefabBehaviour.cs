@@ -20,7 +20,11 @@ public class HeartPrefabBehaviour : MonoBehaviour
             {
                 audioSource.PlayOneShot(audioClip);
 
-                collision.gameObject.GetComponent<HPBehaviour>().actualHP++;
+                collision.gameObject.GetComponent<HPBehaviour>().actualHP += 2;
+                if (collision.gameObject.GetComponent<HPBehaviour>().actualHP > collision.gameObject.GetComponent<HPBehaviour>().maxHP)
+                {
+                    collision.gameObject.GetComponent<HPBehaviour>().actualHP = collision.gameObject.GetComponent<HPBehaviour>().maxHP;
+                }
                 collision.gameObject.GetComponent<HPBehaviour>().recalculateHP();
                 Debug.Log("Dentro del corazon");
                 Destroy(gameObject);

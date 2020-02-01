@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - dmgObstacle
   - bullet
+  - meta
   layers:
   - Default
   - TransparentFX

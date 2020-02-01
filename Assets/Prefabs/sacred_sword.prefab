@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7dc9d3b82a59784a9e4980c00bb8ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 80
-  knockback: 0.4
+  damage: 45
+  knockback: 0.3
   cooldown: 0.5
   thrust: 0.9
   postMeleeCd: -0.5

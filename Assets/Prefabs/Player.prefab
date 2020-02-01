@@ -90,7 +90,7 @@ MonoBehaviour:
   SacredShooter: 0
   audioSource: {fileID: 1381750180}
   step: {fileID: 8300000, guid: 11d0c878b325e1c4980b9e6cfb9251e7, type: 3}
-  speed: 5
+  speed: 7.5
   weaponDistance: 1.15
   bladeDistance: 1.5
   weapon: {fileID: 1913787927300787823}
@@ -150,8 +150,8 @@ MonoBehaviour:
   heart: {fileID: 21300000, guid: b292625edde7bcf4abe8f4a9568a0760, type: 3}
   halfheart: {fileID: 21300000, guid: e7f456a55b57aa044a4ca5f2ce9a0736, type: 3}
   imagen: {fileID: 2737625153345879497, guid: 2aec3866adfdcb048b7560708872fed4, type: 3}
-  maxHP: 6
-  actualHP: 6
+  maxHP: 10
+  actualHP: 10
   distanciaEntreCorazones: 70
   HitFX: {fileID: 9078814408047915560, guid: 77b8b9de9937fd84abbf062cecde81cd, type: 3}
   invulenrabilityTime: 2
@@ -383,7 +383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6519436060300772814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.02, y: -1.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2855001974512527398}

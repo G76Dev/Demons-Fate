@@ -53,6 +53,8 @@ public class PlayerInterface : MonoBehaviour
 
     public void enemyKilled()
     {
+        metaBehaviour = GameObject.FindGameObjectWithTag("meta").GetComponent<MetaBehaviour>();
+
         killCount++;
         if (metaBehaviour != null && killCount >= enemiesToKill)
         {

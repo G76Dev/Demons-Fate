@@ -131,11 +131,11 @@ MonoBehaviour:
   embestidaAudios:
   - {fileID: 8300000, guid: 104aefd56b52c614eb70f159b14b5e7d, type: 3}
   audioSource: {fileID: 2668853435238827896}
-  speed: 5
+  speed: 7
   strength: 500
   detectDistance: 13
   maximunDistance: 3
-  attackTime: 1.5
+  attackTime: 1
   knockback: 0.3
   dmg: 1
   kFriction: 0.015
@@ -321,7 +321,7 @@ PrefabInstance:
     - target: {fileID: 8546073932184214382, guid: 025552300ebcbf84f84c75d6996effd8,
         type: 3}
       propertyPath: health
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
         type: 3}

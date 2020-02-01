@@ -250,6 +250,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871612, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: maximunShootingDistance
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871612, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871612, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: shootingTime
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871613, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871613, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6236439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871613, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4142889663103871614, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -308,7 +338,12 @@ PrefabInstance:
     - target: {fileID: 4142889663103871614, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -0.9
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871614, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bab3f8a43bbacd64e99ef76ddabca59d, type: 3}
@@ -329,6 +364,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShootingEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871612, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: maximunShootingDistance
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871612, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871612, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: shootingTime
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871613, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871613, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6236439
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871613, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4142889663103871614, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
@@ -384,6 +449,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871614, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142889663103871614, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bab3f8a43bbacd64e99ef76ddabca59d, type: 3}

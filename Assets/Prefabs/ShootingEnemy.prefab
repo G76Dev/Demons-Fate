@@ -136,13 +136,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3d7b105bc969a3147ace6dd05e83fcf9, type: 3}
   - {fileID: 8300000, guid: 4b1d5a199e85f8e42a2998f700dda5e2, type: 3}
   - {fileID: 8300000, guid: d61850ec091b16b4e97b7374d743e1ff, type: 3}
-  speed: 2
+  speed: 5
   detectDistance: 13
   maximunDistance: 5
   maximunShootingDistance: 6
-  shootingTime: 1
-  bulletSpeed: 7
-  bullet: {fileID: 7776528486151003682, guid: 86e7ab49a6370324a8c5113324b80938, type: 3}
+  shootingTime: 0.75
+  bulletSpeed: 10
+  bullet: {fileID: 7776528486151003682, guid: 1ec845d91d07e074bb6d7f018fc9b48f, type: 3}
   shootingPoint: {fileID: 132666669924911771}
   kFriction: 0.015
 --- !u!50 &4142889663103871615
@@ -353,6 +353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546073932184214382, guid: 025552300ebcbf84f84c75d6996effd8,
+        type: 3}
+      propertyPath: health
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8546073932184214383, guid: 025552300ebcbf84f84c75d6996effd8,
         type: 3}

@@ -245,7 +245,7 @@ MonoBehaviour:
   - {x: -5.1445823, y: 0.12843353, z: 0}
   m_ShapePathHash: 1713359603
   m_Mesh: {fileID: 0}
-  m_InstanceId: -66190
+  m_InstanceId: 114664
 --- !u!1 &4259934269241193329
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   - {x: -4.816526, y: 0.38464415, z: 0}
   m_ShapePathHash: 129632197
   m_Mesh: {fileID: 0}
-  m_InstanceId: -66366
+  m_InstanceId: 114670
 --- !u!1 &4259934269749300490
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +365,7 @@ MonoBehaviour:
   - {x: -4.816526, y: 0.38464415, z: 0}
   m_ShapePathHash: 129632197
   m_Mesh: {fileID: 0}
-  m_InstanceId: -66708
+  m_InstanceId: 114672
 --- !u!1 &4259934269872782280
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
   - {x: -5.1445823, y: 0.12843353, z: 0}
   m_ShapePathHash: 1713359603
   m_Mesh: {fileID: 0}
-  m_InstanceId: -65576
+  m_InstanceId: 114682
 --- !u!1001 &2854980325750451936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -434,6 +434,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Melee enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862296871981422853, guid: c3eff292563d46c4e9014f126e6997a1,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5377358
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862296871981422853, guid: c3eff292563d46c4e9014f126e6997a1,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5377358
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862296871981422853, guid: c3eff292563d46c4e9014f126e6997a1,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5377358
       objectReference: {fileID: 0}
     - target: {fileID: 7862296871981422854, guid: c3eff292563d46c4e9014f126e6997a1,
         type: 3}
@@ -490,6 +505,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8972485252782110858, guid: c3eff292563d46c4e9014f126e6997a1,
+        type: 3}
+      propertyPath: health
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3eff292563d46c4e9014f126e6997a1, type: 3}
 --- !u!4 &5369012188193994726 stripped
@@ -509,6 +529,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Melee enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862296871981422853, guid: c3eff292563d46c4e9014f126e6997a1,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5377358
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862296871981422853, guid: c3eff292563d46c4e9014f126e6997a1,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5377358
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862296871981422853, guid: c3eff292563d46c4e9014f126e6997a1,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5377358
       objectReference: {fileID: 0}
     - target: {fileID: 7862296871981422854, guid: c3eff292563d46c4e9014f126e6997a1,
         type: 3}
@@ -569,6 +604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972485252782110858, guid: c3eff292563d46c4e9014f126e6997a1,
+        type: 3}
+      propertyPath: health
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3eff292563d46c4e9014f126e6997a1, type: 3}
