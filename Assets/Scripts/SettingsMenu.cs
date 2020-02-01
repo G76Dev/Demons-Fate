@@ -6,10 +6,13 @@ using UnityEngine.Audio;
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
-
+    private void Start()
+    {
+        AudioListener.volume = 0.1f;
+    }
     public void setVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        AudioListener.volume = volume;
     }
 
     public void setFullscreen(bool isFullscreen)
