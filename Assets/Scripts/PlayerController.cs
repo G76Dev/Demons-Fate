@@ -67,12 +67,18 @@ public class PlayerController : MonoBehaviour
         mouseVector.Normalize();
 
         weapon.position = transform.position + mouseVector * weaponDistance;
-        if(mouseVectorY >= 0)
-            weapon.rotation = Quaternion.Euler(0,0, Vector3.Angle(mouseVector, Vector3.right) - 90);
+        if (mouseVectorY >= 0)
+        {
+            weapon.rotation = Quaternion.Euler(0, 0, Vector3.Angle(mouseVector, Vector3.right) - 90);
+            //weapon.localScale = new Vector3(Mathf.Abs(weapon.localScale.x), weapon.localScale.y, weapon.localScale.z);
+        }
         else
+        {
             weapon.rotation = Quaternion.Euler(0, 0, -Vector3.Angle(mouseVector, Vector3.right) - 90);
+            //weapon.localScale = new Vector3(-Mathf.Abs(weapon.localScale.x), weapon.localScale.y, weapon.localScale.z);
+        }   
 
-        blade.position = transform.position + mouseVector * bladeDistance;
+    blade.position = transform.position + mouseVector * bladeDistance;
         if (mouseVectorY >= 0)
             blade.rotation = Quaternion.Euler(0, 0, Vector3.Angle(mouseVector, Vector3.right) - 90);
         else

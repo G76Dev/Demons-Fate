@@ -91,7 +91,7 @@ MonoBehaviour:
   audioSource: {fileID: 1381750180}
   step: {fileID: 8300000, guid: 11d0c878b325e1c4980b9e6cfb9251e7, type: 3}
   speed: 5
-  weaponDistance: 1.5
+  weaponDistance: 1.15
   bladeDistance: 1.5
   weapon: {fileID: 1913787927300787823}
   blade: {fileID: 1913787925492368054}
@@ -519,12 +519,12 @@ PrefabInstance:
     - target: {fileID: 4400055121182303668, guid: c931845c60eb8704c99708caca28c217,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.38396
+      value: -0.38396
       objectReference: {fileID: 0}
     - target: {fileID: 4400055121182303668, guid: c931845c60eb8704c99708caca28c217,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.38396
+      value: -0.38396
       objectReference: {fileID: 0}
     - target: {fileID: 4400055121182303668, guid: c931845c60eb8704c99708caca28c217,
         type: 3}
