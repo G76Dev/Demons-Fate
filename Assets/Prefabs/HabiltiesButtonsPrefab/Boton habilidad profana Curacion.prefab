@@ -275,4 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0418283fa9388d46ba98da77d249622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSound: {fileID: 0}
+  enterSound: {fileID: 0}
+  audioSource: {fileID: 0}
   increaseMaxHP: 2
+  player: {fileID: 0}

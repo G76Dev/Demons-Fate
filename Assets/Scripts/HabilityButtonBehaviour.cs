@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class HabilityButtonBehaviour : MonoBehaviour
 {
+    [SerializeField] AudioClip clickSound, enterSound;
+    [SerializeField] AudioSource audioSource;
+
     [SerializeField] int increaseMaxHP;
     public GameObject player;
 
@@ -22,6 +25,7 @@ public class HabilityButtonBehaviour : MonoBehaviour
 
     public void onPointerIn()
     {
+        PlayEnterSound();
         transform.localScale = new Vector3(transform.localScale.x * 1.3f, transform.localScale.y * 1.3f, transform.localScale.z);
     }
 
@@ -33,6 +37,8 @@ public class HabilityButtonBehaviour : MonoBehaviour
     //Si se quieren añadir más niveles, basta con añadir en los casos, los nombres de dichos niveles y la próxima escena que se debe cargar.
     public void nextLevel()
     {
+        PlayClickSound();
+
         Time.timeScale = 1;
 
         if(gameObject.name == "Hability 2")
@@ -124,6 +130,16 @@ public class HabilityButtonBehaviour : MonoBehaviour
             player.GetComponent<HPBehaviour>().recalculateHP();
         }
         
+    }
+
+    public void PlayClickSound()
+    {
+        audioSource.PlayOneShot(clickSound);
+    }
+
+    public void PlayEnterSound()
+    {
+        audioSource.PlayOneShot(enterSound);
     }
 
 }

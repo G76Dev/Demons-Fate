@@ -7,6 +7,7 @@ public class HPBehaviour : MonoBehaviour
 {
     [SerializeField] AudioClip[] impactAudios;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip death;
 
     public Sprite heart;
     public Sprite halfheart;
@@ -152,6 +153,7 @@ public class HPBehaviour : MonoBehaviour
 
     private void die()
     {
+        audioSource.PlayOneShot(death);
         //programar lo que sea que ocurre cuando se muere. Por ejemplo, se podría poner el timescale a 0, y mostrar por pantalla un texto de derrota, 
         //y un boton de volver a jugar, junto a otro de volver al menú principal
         Debug.Log("Muerte");

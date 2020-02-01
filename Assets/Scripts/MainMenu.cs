@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] AudioClip buttonClickSound, buttonEnterSound;
+    [SerializeField] AudioSource audioSource;
+
     public void playGame()
     {
         //Cargar la escena del primer nivel 
@@ -30,5 +33,15 @@ public class MainMenu : MonoBehaviour
     public void InitGame() {
         Time.timeScale = 1;
         SceneManager.LoadScene("InitScene");
+    }
+
+    public void playClickButtonSound()
+    {
+        audioSource.PlayOneShot(buttonClickSound);
+    }
+
+    public void playEnterButtonSound()
+    {
+        audioSource.PlayOneShot(buttonEnterSound);
     }
 }

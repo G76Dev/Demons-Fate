@@ -24,6 +24,7 @@ public class EnemyGenericController : MonoBehaviour
 
     [SerializeField] AudioClip[] impactAudios;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip death;
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +102,7 @@ public class EnemyGenericController : MonoBehaviour
 
     private void Die()
     {
+        audioSource.PlayOneShot(death);
         Destroy(Instantiate(DieFX, this.transform.position, Quaternion.identity),2);
         GameObject.Find("Canvas").GetComponent<PlayerInterface>().enemyKilled();
         //GetComponent<SpriteRenderer>().enabled = false;
