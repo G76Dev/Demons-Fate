@@ -7,6 +7,14 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] AudioClip buttonClickSound, buttonEnterSound;
     [SerializeField] AudioSource audioSource;
+    GameObject menu;
+
+    private void Start()
+    {
+        menu = GameObject.Find("Main menu buttons");
+        DontDestroyOnLoad(menu);
+        
+    }
 
     public void playGame()
     {
@@ -31,6 +39,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void InitGame() {
+        Destroy(menu, 2);
         Time.timeScale = 1;
         SceneManager.LoadScene("InitScene");
     }
@@ -38,6 +47,7 @@ public class MainMenu : MonoBehaviour
     public void playClickButtonSound()
     {
         audioSource.PlayOneShot(buttonClickSound);
+
     }
 
     public void playEnterButtonSound()
