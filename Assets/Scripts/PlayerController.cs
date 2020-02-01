@@ -127,8 +127,8 @@ public class PlayerController : MonoBehaviour
         {
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticallInput = Input.GetAxis("Vertical");
-            rb.velocity = new Vector3(horizontalInput * speedModifierX, verticallInput * speedModifierY, 0) * speed;
-            animator.SetBool("isMoving", (horizontalInput != 0 || verticallInput != 0));
+            rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speedModifierX, Input.GetAxis("Vertical") * speedModifierY, 0) * speed;
+            animator.SetBool("isMoving", (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0));
             GetComponent<SpriteRenderer>().flipX = (mouseVector.x >= 0) ? false : true;
         }
 
