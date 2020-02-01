@@ -113,6 +113,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dc046fc1565c4eb4ea6c8f4445b61cb5, type: 3}
   - {fileID: 8300000, guid: 104aefd56b52c614eb70f159b14b5e7d, type: 3}
   audioSource: {fileID: 2668853435238827896}
+  death: {fileID: 0}
 --- !u!114 &7862296871981422852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e7c0c4ced4da946b94f2e4bdd0374c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  embestidaAudios:
+  - {fileID: 8300000, guid: 104aefd56b52c614eb70f159b14b5e7d, type: 3}
+  audioSource: {fileID: 2668853435238827896}
   speed: 5
   strength: 500
   detectDistance: 13
