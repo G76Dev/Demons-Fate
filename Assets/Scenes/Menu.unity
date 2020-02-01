@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2410,14 +2410,14 @@ RectTransform:
   m_GameObject: {fileID: 1552682575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.7592325, y: 5.7750707, z: 4.0313997}
+  m_LocalScale: {x: 6.1634874, y: 4.398987, z: 3.070798}
   m_Children: []
   m_Father: {fileID: 1467204743}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -126}
+  m_AnchoredPosition: {x: -4, y: -31}
   m_SizeDelta: {x: 100, y: 87.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1552682577
@@ -2438,7 +2438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 7df2b474bea2bc44fb64dce63480203b, type: 3}
+  m_Texture: {fileID: 2800000, guid: 4c6b95db7a3d06a42b6ec8ec450ebc24, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3049,7 +3049,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 87560e2e195662a438677591189ba075, type: 3}
+  m_Texture: {fileID: 2800000, guid: e0e8b93df10d11c4fbe7f322c69e0029, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

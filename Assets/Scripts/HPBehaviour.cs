@@ -18,6 +18,8 @@ public class HPBehaviour : MonoBehaviour
 
     private List<GameObject> hearts;
 
+    bool firstTime=false;
+
     public int maxHP;
     public int actualHP;
     public int distanciaEntreCorazones;
@@ -137,9 +139,10 @@ public class HPBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (actualHP <= 0)
+        if (actualHP <= 0 && !firstTime)
         {
             die();
+            firstTime = true;
         }
     }
 
@@ -159,6 +162,6 @@ public class HPBehaviour : MonoBehaviour
         Debug.Log("Muerte");
         Time.timeScale = 0;
         GameObject.Find("Death background").GetComponent<Animator>().Play("HSIn");
-        Destroy(gameObject);
+        Destroy(gameObject,3);
     }
 }
