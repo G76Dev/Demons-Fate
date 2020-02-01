@@ -89,6 +89,9 @@ MonoBehaviour:
   DemonicSword: 0
   profaneHealing: 0
   DemonicShooter: 0
+  SacredSword: 0
+  eliminateDemonic: 0
+  SacredShooter: 0
   kFriction: 0.015
   demonicHabilities: 0
 --- !u!114 &2855001974512527402
@@ -110,7 +113,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ad35371b50baad24a80382fda9e6bb9c, type: 3}
   audioSource: {fileID: 1381750180}
   slashPoint: {fileID: 1913787925492368054}
-  weaponPrefab: {fileID: 7643119461130814592, guid: f961de1a0d37f0548bdf5667bfdeaadf,
+  weaponPrefab: {fileID: 7643119461130814592, guid: 40023d91e7609994f9097aa800f2223f,
+    type: 3}
+  playerController: {fileID: 2855001974512527396}
+  demonicSwordWeapon: {fileID: 7643119461130814592, guid: 43eade1da9124f3478d7a01142d2cae2,
+    type: 3}
+  sacredSwordHability: {fileID: 7643119461130814592, guid: f961de1a0d37f0548bdf5667bfdeaadf,
     type: 3}
 --- !u!114 &2855001974512527405
 MonoBehaviour:
@@ -137,7 +145,7 @@ MonoBehaviour:
   imagen: {fileID: 2737625153345879497, guid: 2aec3866adfdcb048b7560708872fed4, type: 3}
   maxHP: 6
   actualHP: 6
-  distanciaEntreCorazones: 100
+  distanciaEntreCorazones: 70
   HitFX: {fileID: 9078814408047915560, guid: 77b8b9de9937fd84abbf062cecde81cd, type: 3}
   invulenrabilityTime: 2
   vulnerable: 1

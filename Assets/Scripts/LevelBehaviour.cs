@@ -46,21 +46,27 @@ public class LevelBehaviour : MonoBehaviour
         int index1 = Random.Range(0, sacredHabilities.Count);
         int index2 = Random.Range(0, profaneHabilities.Count);
 
-        hability1.GetComponent<Text>().text = sacredHabilities[index1].GetComponent<Text>().text;
-        hability1.GetComponentInChildren<Image>().sprite = sacredHabilities[index1].GetComponentInChildren<Image>().sprite;
-        hability1.GetComponentInChildren<Button>().onClick = sacredHabilities[index1].GetComponentInChildren<Button>().onClick;
+        if (sacredHabilities[index1] != null && profaneHabilities[index2] != null)
+        {
+            hability1.GetComponent<Text>().text = sacredHabilities[index1].GetComponent<Text>().text;
+            hability1.GetComponentInChildren<Image>().sprite = sacredHabilities[index1].GetComponentInChildren<Image>().sprite;
+            hability1.GetComponentInChildren<Button>().onClick = sacredHabilities[index1].GetComponentInChildren<Button>().onClick;
 
-        hability2.GetComponent<Text>().text = profaneHabilities[index2].GetComponent<Text>().text;
-        hability2.GetComponentInChildren<Image>().sprite = profaneHabilities[index2].GetComponentInChildren<Image>().sprite;
-        hability2.GetComponentInChildren<Button>().onClick = profaneHabilities[index2].GetComponentInChildren<Button>().onClick;
+            hability2.GetComponent<Text>().text = profaneHabilities[index2].GetComponent<Text>().text;
+            hability2.GetComponentInChildren<Image>().sprite = profaneHabilities[index2].GetComponentInChildren<Image>().sprite;
+            hability2.GetComponentInChildren<Button>().onClick = profaneHabilities[index2].GetComponentInChildren<Button>().onClick;
 
+            sacredHabilities.RemoveAt(index1);
+            profaneHabilities.RemoveAt(index2);
 
-        sacredHabilities.RemoveAt(index1);
-        profaneHabilities.RemoveAt(index2);
-
-
-        HSCanvas.GetComponent<Animator>().Play("HSIn");
-        Debug.Log("Dale carla");
+            HSCanvas.GetComponent<Animator>().Play("HSIn");
+            Debug.Log("Dale carla");
+        }
+        else
+        {
+            Debug.Log("No quedan habilidades");
+        }
+        
 
     }
     

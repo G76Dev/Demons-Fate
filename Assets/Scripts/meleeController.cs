@@ -14,6 +14,12 @@ public class meleeController : MonoBehaviour
     private float slashCooldown = 0.2f;
     private float slashDuration;
 
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private GameObject demonicSwordWeapon;
+    [SerializeField] private GameObject sacredSwordHability;
+    private GameObject defaultSword;
+    private bool auxDem = false, auxSac = false;
+
     //EVENTOS
     public delegate void Melee(); //Delegate creado expresamente para eventos de combate cuerpo a cuerpo
     public static event Melee PlayerAttack; //Evento que siempre se dispara cuando el jugador ataca
@@ -24,7 +30,7 @@ public class meleeController : MonoBehaviour
         canAttack = true;
         slashDirection = true;
         slashCooldown = weaponPrefab.GetComponent<slashBehaviour>().getCooldown();
-
+        defaultSword = weaponPrefab;
     }
 
     // Update is called once per frame
@@ -34,6 +40,29 @@ public class meleeController : MonoBehaviour
         {
             Slash();
         }
+
+        if(playerController.DemonicSword)
+        {
+            weaponPrefab = demonicSwordWeapon;
+            auxDem = true;
+        }
+        if (playerController.SacredSword)
+        {
+            auxSac = true;
+            weaponPrefab = sacredSwordHability;
+        }
+        if (playerController.eliminateDemonic && weaponPrefab.Equals(demonicSwordWeapon))
+        {
+            if (auxSac)
+            {
+                weaponPrefab = sacredSwordHability;
+            }
+            else
+            {
+                weaponPrefab = defaultSword;
+            }
+        }
+
     }
 
     public float getSlashDuration()

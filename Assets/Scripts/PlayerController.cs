@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [HideInInspector] public bool SacredSword, eliminateDemonic, SacredShooter;
+
     public AudioSource audioSource;
     public AudioClip step;
 
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
         melee = GetComponent<meleeController>();
         thrust = melee.weaponPrefab.GetComponent<slashBehaviour>().getThrust();
         DemonicShooter = DemonicSword = profaneHealing = false;
+        SacredSword = eliminateDemonic = SacredShooter = false;
     }
 
 

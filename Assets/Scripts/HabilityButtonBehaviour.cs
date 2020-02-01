@@ -26,11 +26,14 @@ public class HabilityButtonBehaviour : MonoBehaviour
     public void onPointerIn()
     {
         PlayEnterSound();
+
         transform.localScale = new Vector3(transform.localScale.x * 1.3f, transform.localScale.y * 1.3f, transform.localScale.z);
     }
 
     public void onPointerOut()
     {
+        PlayEnterSound();
+
         transform.localScale = new Vector3(transform.localScale.x / 1.3f, transform.localScale.y / 1.3f, transform.localScale.z);
     }
 
@@ -48,6 +51,9 @@ public class HabilityButtonBehaviour : MonoBehaviour
 
         switch (SceneManager.GetActiveScene().name)
         {
+            case "Nivel tutorial":
+                SceneManager.LoadScene("Nivel 1");
+                break;
             case "InitScene":
                 SceneManager.LoadScene("Nivel tutorial");
                 break;
@@ -103,17 +109,35 @@ public class HabilityButtonBehaviour : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerController>().DemonicSword = true;
+        player.GetComponent<PlayerController>().SacredSword = false;
     }
     public void activateDemonicShooter()
     {
+        Debug.Log("Has adquirido el disparo demoníaco");
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerController>().DemonicShooter = true;
+        player.GetComponent<PlayerController>().SacredShooter = false;
+    }
+    public void activateSacredSword()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().SacredSword = true;
+        player.GetComponent<PlayerController>().DemonicSword = false;
+    }
+    public void activateSacredShooter()
+    {
+        Debug.Log("Has adquirido el disparo sagrado");
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerController>().SacredShooter = true;
+        player.GetComponent<PlayerController>().DemonicShooter = false;
     }
 
     public void nonDemonicHabilities()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Debug.Log("Se resetean las habilidades demoniacas");
+
+        player.GetComponent<PlayerController>().eliminateDemonic = true;
 
         player.GetComponent<PlayerController>().DemonicSword=false;
         player.GetComponent<PlayerController>().DemonicShooter = false;
@@ -128,18 +152,21 @@ public class HabilityButtonBehaviour : MonoBehaviour
                 player.GetComponent<HPBehaviour>().actualHP = 1;
             }
             player.GetComponent<HPBehaviour>().recalculateHP();
+            player.GetComponent<PlayerController>().demonicHabilities = 0;
         }
         
     }
 
     public void PlayClickSound()
     {
-        audioSource.PlayOneShot(clickSound);
+        if(clickSound!=null)
+            audioSource.PlayOneShot(clickSound);
     }
 
     public void PlayEnterSound()
     {
-        audioSource.PlayOneShot(enterSound);
+        if(enterSound != null)
+            audioSource.PlayOneShot(enterSound);
     }
 
 }
