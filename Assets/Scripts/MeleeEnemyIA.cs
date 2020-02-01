@@ -5,6 +5,9 @@ using UnityEngine;
 //[RequireComponent(typeof(EnemyGenericController))]
 public class MeleeEnemyIA : MonoBehaviour
 {
+    [SerializeField] AudioClip[] embestidaAudios;
+    [SerializeField] AudioSource audioSource;
+
     EnemyGenericController enemyController;
 
     public float speed;
@@ -128,6 +131,12 @@ public class MeleeEnemyIA : MonoBehaviour
         attackTimer += Time.deltaTime;
         if (attackTimer >= attackTime)
         {
+            int random = UnityEngine.Random.Range(0, embestidaAudios.Length);
+            if (embestidaAudios[random] != null)
+            {
+                audioSource.PlayOneShot(embestidaAudios[random]);
+            }
+
             preparing = false;
             Debug.Log("Embestida");
             attackTimer = 0;
