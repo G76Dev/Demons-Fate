@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5646271188270785382}
   - component: {fileID: 8005029440719284292}
   m_Layer: 0
-  m_Name: bullet
+  m_Name: Sacred bullet
   m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7776528486151003682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.655, y: 0.692, z: -22.148071}
-  m_LocalScale: {x: 0.631944, y: 0.564944, z: 1}
+  m_LocalScale: {x: 1.1568347, y: 1.0341847, z: 1.8305968}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,7 +94,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a527775c34a6dbc42890e524349cf026, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85b4ed3fad368a045b3c63522f1a018d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009803712, y: -0.021918252}
+  m_Offset: {x: -0.011815369, y: -0.05117178}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.51530874, y: 0.84164155}
+  m_Size: {x: 0.752689, y: 1.188184}
   m_EdgeRadius: 0
 --- !u!114 &8005029440719284292
 MonoBehaviour:
@@ -143,8 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1600831a79f4954fb3ad3b1918e824c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  knockback: 0.15
+  damage: 50
+  knockback: 0.55
   hitFX: {fileID: 8635514372887387213, guid: 3889911e49d1a4a41b9f511453b1a352, type: 3}
   shootedByIA: 0
-  cooldown: 0.3
+  cooldown: 1

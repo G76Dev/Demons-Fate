@@ -37,8 +37,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1913787925492368054}
-  - {fileID: 1913787927300787823}
   - {fileID: 2064332953963737362}
+  - {fileID: 1913787927300787823}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58,7 +58,14 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7776528486151003682, guid: 86e7ab49a6370324a8c5113324b80938,
     type: 3}
   bulletForce: 15
-  shootCooldown: 0.3
+  demonicShootWeapon: {fileID: 4400055121182303669, guid: 9df2851ca328498418fbbccb1ffebbb1,
+    type: 3}
+  sacredShootWeapon: {fileID: 4400055121182303669, guid: 399c9d4ede38e4544adc0c121942b7a3,
+    type: 3}
+  DemonicBulletPrefab: {fileID: 7776528486151003682, guid: 1ec845d91d07e074bb6d7f018fc9b48f,
+    type: 3}
+  SacredBulletPrefab: {fileID: 7776528486151003682, guid: 2e43a6e53d556254d99372eb2fe4dc50,
+    type: 3}
   audioSource: {fileID: 1381750180}
   shootSounds:
   - {fileID: 8300000, guid: d2315a30ac4f81349a33ad8ed07f1430, type: 3}
@@ -84,7 +91,7 @@ MonoBehaviour:
   audioSource: {fileID: 1381750180}
   step: {fileID: 8300000, guid: 11d0c878b325e1c4980b9e6cfb9251e7, type: 3}
   speed: 5
-  weaponDistance: 1
+  weaponDistance: 1.5
   bladeDistance: 1.5
   weapon: {fileID: 1913787927300787823}
   blade: {fileID: 1913787925492368054}
@@ -380,7 +387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2855001974512527398}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8380636197480553610
 MonoBehaviour:
@@ -439,6 +446,21 @@ PrefabInstance:
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 1913787927300787823}
+    - target: {fileID: 4400055121182303667, guid: c931845c60eb8704c99708caca28c217,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400055121182303667, guid: c931845c60eb8704c99708caca28c217,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400055121182303667, guid: c931845c60eb8704c99708caca28c217,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4400055121182303668, guid: c931845c60eb8704c99708caca28c217,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -477,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 4400055121182303668, guid: c931845c60eb8704c99708caca28c217,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4400055121182303668, guid: c931845c60eb8704c99708caca28c217,
         type: 3}
@@ -493,6 +515,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400055121182303668, guid: c931845c60eb8704c99708caca28c217,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.38396
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400055121182303668, guid: c931845c60eb8704c99708caca28c217,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.38396
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400055121182303668, guid: c931845c60eb8704c99708caca28c217,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.38396
       objectReference: {fileID: 0}
     - target: {fileID: 4400055121182303669, guid: c931845c60eb8704c99708caca28c217,
         type: 3}
