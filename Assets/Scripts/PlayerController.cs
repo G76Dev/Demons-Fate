@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Distancia entre el jugador y el arma cuerpo a cuerpo")] [SerializeField] float bladeDistance;
     [Tooltip("Referencia al punto donde se encuentra el arma a distancia")] [SerializeField] Transform weapon;
     [Tooltip("Referencia al punto donde se instanciarán los ataques cuerpo a cuerpo")] [SerializeField] Transform blade;
-    [Tooltip("Cantidad de espacio que avanza el jugador al atacar en una direccion")] [SerializeField] float thrust = 1;
+    private float thrust = 0.5f;
     [HideInInspector] public Vector3 mouseVector;
     private bool canMove;
     private meleeController melee;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         rb = GetComponent<Rigidbody2D>();
         melee = GetComponent<meleeController>();
-
+        thrust = melee.weaponPrefab.GetComponent<slashBehaviour>().getThrust();
         DemonicShooter = DemonicSword = profaneHealing = false;
     }
 

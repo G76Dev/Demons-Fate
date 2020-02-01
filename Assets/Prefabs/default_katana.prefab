@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1090119012240038915}
   - component: {fileID: 8973086880830494452}
   m_Layer: 0
-  m_Name: katana_test
+  m_Name: default_katana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,8 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 5178091957482349771, guid: 613fc6968a0bdcb41a4da5956ff0508d,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4293746ead9eae6438196b3a74efa282, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,7 +119,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 2.5625}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 5.12, y: 2.5625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -143,3 +142,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   knockback: 0.35
+  cooldown: 0.4
+  thrust: 0.5

@@ -8,7 +8,7 @@ public class meleeController : MonoBehaviour
     [Tooltip("Prefab del arma, que contiene sus atributos")] public GameObject weaponPrefab;
     private bool canAttack;
     private bool slashDirection;
-    [SerializeField] private float slashCooldown = 0.2f;
+    private float slashCooldown = 0.2f;
     private float slashDuration;
 
     //EVENTOS
@@ -20,6 +20,7 @@ public class meleeController : MonoBehaviour
     {
         canAttack = true;
         slashDirection = true;
+        slashCooldown = weaponPrefab.GetComponent<slashBehaviour>().getCooldown();
 
     }
 

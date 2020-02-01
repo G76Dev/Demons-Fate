@@ -72,12 +72,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   weaponDistance: 1
-  bladeDistance: 1.3
+  bladeDistance: 1.5
   weapon: {fileID: 1913787927300787823}
   blade: {fileID: 1913787925492368054}
-  thrust: 0.5
   mouseVector: {x: 0, y: 0, z: 0}
+  DemonicSword: 0
+  profaneHealing: 0
+  DemonicShooter: 0
   kFriction: 0.015
+  demonicHabilities: 0
 --- !u!114 &2855001974512527402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,9 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slashPoint: {fileID: 1913787925492368054}
-  weaponPrefab: {fileID: 7643119461130814592, guid: 40023d91e7609994f9097aa800f2223f,
+  weaponPrefab: {fileID: 7643119461130814592, guid: 43eade1da9124f3478d7a01142d2cae2,
     type: 3}
-  slashCooldown: 0.2
 --- !u!114 &2855001974512527405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heart: {fileID: 21300000, guid: b292625edde7bcf4abe8f4a9568a0760, type: 3}
   halfheart: {fileID: 21300000, guid: e7f456a55b57aa044a4ca5f2ce9a0736, type: 3}
-  targetPoint: {fileID: 0}
   imagen: {fileID: 2737625153345879497, guid: 2aec3866adfdcb048b7560708872fed4, type: 3}
   maxHP: 7
   actualHP: 5

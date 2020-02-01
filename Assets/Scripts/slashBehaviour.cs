@@ -6,20 +6,31 @@ public class slashBehaviour : MonoBehaviour
 {
     private Animator anim;
 
-    [SerializeField] int damage = 30;
-    [SerializeField] float knockback = 0.35f;
+    [Tooltip("Daño causado por este arma")] [SerializeField] int damage = 30;
+    [Tooltip("Retroceso causado a los enemigos que daña este arma")] [SerializeField] float knockback = 0.35f;
+    [Tooltip("Cooldown entre ataque y ataque")][SerializeField] float cooldown = 0.2f;
+    [Tooltip("Cantidad de espacio que avanza el jugador al atacar en una direccion con este arma")] [SerializeField] float thrust = 1;
 
     private void Start()
     {
         anim = this.GetComponent<Animator>();
+    }
 
+    public float getCooldown()
+    {
+        return cooldown;
+    }
+
+    public float getThrust()
+    {
+        return thrust;
     }
 
     private void Update()
     {
         if(!AnimatorIsPlaying())
         {
-            Destroy(gameObject,0.3f);
+            Destroy(gameObject,0.1f);
         }
     }
 
