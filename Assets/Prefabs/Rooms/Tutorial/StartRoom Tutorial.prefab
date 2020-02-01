@@ -45,10 +45,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -222,6 +223,7 @@ GameObject:
   - component: {fileID: 4217212200972061923}
   - component: {fileID: 4217212200972061925}
   - component: {fileID: 4217212200972061922}
+  - component: {fileID: 1317039936633439668}
   m_Layer: 0
   m_Name: Wall (12)
   m_TagString: Wall
@@ -257,10 +259,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -318,6 +321,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.4089756, y: 1.6874621}
   m_EdgeRadius: 0
+--- !u!114 &1317039936633439668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217212200972061920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -3.0882945, y: -1.1688151, z: 0}
+  - {x: 3.9330988, y: -1.1508963, z: 0}
+  - {x: 3.9330964, y: 1.2808397, z: 0}
+  - {x: -3.0698128, y: 1.2427464, z: 0}
+  m_ShapePathHash: 1744105533
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 87666
 --- !u!1 &4217212201164631194
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +358,7 @@ GameObject:
   - component: {fileID: 4217212201164631197}
   - component: {fileID: 4217212201164631199}
   - component: {fileID: 4217212201164631196}
+  - component: {fileID: 5715196813559442839}
   m_Layer: 0
   m_Name: Wall (10)
   m_TagString: Wall
@@ -364,10 +394,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -425,6 +456,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.58150536, y: 3.878046}
   m_EdgeRadius: 0
+--- !u!114 &5715196813559442839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217212201164631194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.38484585, y: -2.074105, z: 0}
+  - {x: 0.19864, y: -2.062178, z: 0}
+  - {x: 0.18493776, y: 1.8393881, z: 0}
+  - {x: -0.39435583, y: 1.8302664, z: 0}
+  m_ShapePathHash: -1818773753
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 87764
 --- !u!1 &4217212201237923597
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +493,7 @@ GameObject:
   - component: {fileID: 4217212201237923596}
   - component: {fileID: 4217212201237923598}
   - component: {fileID: 4217212201237923599}
+  - component: {fileID: 6789647223298925236}
   m_Layer: 0
   m_Name: Wall (12)
   m_TagString: Wall
@@ -471,10 +529,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -532,6 +591,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.0629797, y: 0.5667776}
   m_EdgeRadius: 0
+--- !u!114 &6789647223298925236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217212201237923597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -3.5133996, y: -0.41101965, z: 0}
+  - {x: 3.5449595, y: -0.39310038, z: 0}
+  - {x: 3.5449579, y: 0.37518114, z: 0}
+  - {x: -3.5134, y: 0.41101933, z: 0}
+  m_ShapePathHash: 1427587660
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 87768
 --- !u!1 &4217212201657031781
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +628,7 @@ GameObject:
   - component: {fileID: 4217212201657031780}
   - component: {fileID: 4217212201657031782}
   - component: {fileID: 4217212201657031783}
+  - component: {fileID: 4606106140383073158}
   m_Layer: 0
   m_Name: Wall (10)
   m_TagString: Wall
@@ -578,10 +664,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -639,6 +726,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.58150536, y: 3.878046}
   m_EdgeRadius: 0
+--- !u!114 &4606106140383073158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217212201657031781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.19645369, y: -2.0491555, z: 0}
+  - {x: 0.3870327, y: -2.0497034, z: 0}
+  - {x: 0.37333044, y: 1.8144383, z: 0}
+  - {x: -0.18503022, y: 1.8053162, z: 0}
+  m_ShapePathHash: 782349662
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 87758
 --- !u!1 &4217212201733669799
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +763,7 @@ GameObject:
   - component: {fileID: 4217212201733669798}
   - component: {fileID: 4217212201733669816}
   - component: {fileID: 4217212201733669817}
+  - component: {fileID: 5639109284737321569}
   m_Layer: 0
   m_Name: Wall (11)
   m_TagString: Wall
@@ -685,10 +799,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -746,6 +861,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.0629797, y: 0.5884048}
   m_EdgeRadius: 0
+--- !u!114 &5639109284737321569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217212201733669799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -3.5133996, y: -0.41101965, z: 0}
+  - {x: 3.5449595, y: -0.39310038, z: 0}
+  - {x: 3.5449579, y: 0.37518114, z: 0}
+  - {x: -3.5134, y: 0.41101933, z: 0}
+  m_ShapePathHash: 1427587660
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 87762
 --- !u!1 &4217212201748496541
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +898,7 @@ GameObject:
   - component: {fileID: 4217212201748496540}
   - component: {fileID: 4217212201748496542}
   - component: {fileID: 4217212201748496543}
+  - component: {fileID: 3936013241260439400}
   m_Layer: 0
   m_Name: Wall (11)
   m_TagString: Wall
@@ -792,10 +934,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -853,6 +996,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6041242, y: 3.783382}
   m_EdgeRadius: 0
+--- !u!114 &3936013241260439400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217212201748496541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.5326365, y: -1.0542753, z: 0}
+  - {x: 0.050849877, y: -1.0423485, z: 0}
+  - {x: 0.06401783, y: 3.9669654, z: 0}
+  - {x: -0.51527524, y: 3.9754267, z: 0}
+  m_ShapePathHash: 1214688937
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 85936
 --- !u!1 &4217212201976426462
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +1065,7 @@ GameObject:
   - component: {fileID: 4217212202144327579}
   - component: {fileID: 4217212202144327581}
   - component: {fileID: 4217212202144327578}
+  - component: {fileID: 2806703636630075250}
   m_Layer: 0
   m_Name: Wall (11)
   m_TagString: Wall
@@ -931,10 +1101,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -992,6 +1163,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6041242, y: 3.783382}
   m_EdgeRadius: 0
+--- !u!114 &2806703636630075250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217212202144327576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.024618138, y: -1.0369432, z: 0}
+  - {x: 0.5588683, y: -1.0438726, z: 0}
+  - {x: 0.5451655, y: 4.0079994, z: 0}
+  - {x: -0.03412811, y: 4.017735, z: 0}
+  m_ShapePathHash: 747000995
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 87668
 --- !u!1 &4217212202304964111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,6 +1200,7 @@ GameObject:
   - component: {fileID: 4217212202304964110}
   - component: {fileID: 4217212202304964096}
   - component: {fileID: 4217212202304964097}
+  - component: {fileID: 5026734542199715690}
   m_Layer: 0
   m_Name: Wall (11)
   m_TagString: Wall
@@ -1038,10 +1236,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1099,3 +1298,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.370908, y: 1.6874621}
   m_EdgeRadius: 0
+--- !u!114 &5026734542199715690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217212202304964111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -3.9717593, y: -1.1688153, z: 0}
+  - {x: 3.1095295, y: -1.1658704, z: 0}
+  - {x: 3.094554, y: 1.2658656, z: 0}
+  - {x: -3.9981995, y: 1.2726941, z: 0}
+  m_ShapePathHash: -278693269
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 87760

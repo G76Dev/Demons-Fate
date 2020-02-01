@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2512347925390615179}
   - component: {fileID: 7426756078043047638}
   - component: {fileID: 2743246835552832133}
+  - component: {fileID: 7146996677514465108}
   m_Layer: 0
   m_Name: Wall (14)
   m_TagString: Wall
@@ -46,10 +47,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,6 +109,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.4089756, y: 1.3935004}
   m_EdgeRadius: 0
+--- !u!114 &7146996677514465108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179303778133185733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -3.0882945, y: -1.1688151, z: 0}
+  - {x: 3.9330988, y: -1.1508963, z: 0}
+  - {x: 3.9330964, y: 1.2808397, z: 0}
+  - {x: -3.0698128, y: 1.2427464, z: 0}
+  m_ShapePathHash: 1744105533
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 74516
 --- !u!1 &1447822386441651322
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,10 +234,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -278,6 +307,7 @@ GameObject:
   - component: {fileID: 5524726575131575844}
   - component: {fileID: 703210713702962720}
   - component: {fileID: 762998508968907145}
+  - component: {fileID: 1244643059682981270}
   m_Layer: 0
   m_Name: Wall (12)
   m_TagString: Wall
@@ -313,10 +343,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -374,6 +405,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.851065, y: 0.61785984}
   m_EdgeRadius: 0
+--- !u!114 &1244643059682981270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191736983728376170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -7.8991857, y: -0.41840872, z: 0}
+  - {x: 7.8828616, y: -0.41546294, z: 0}
+  - {x: 7.8880277, y: 0.44924653, z: 0}
+  - {x: -7.9054832, y: 0.411933, z: 0}
+  m_ShapePathHash: -479369142
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 71420
 --- !u!1 &4480728597959843473
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,10 +602,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -651,10 +709,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -729,6 +788,7 @@ GameObject:
   - component: {fileID: 8194439214719424141}
   - component: {fileID: 3302540273365762485}
   - component: {fileID: 4040027838575080411}
+  - component: {fileID: 3101261113786124965}
   m_Layer: 0
   m_Name: Wall (13)
   m_TagString: Wall
@@ -764,10 +824,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -825,6 +886,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.370908, y: 1.3667755}
   m_EdgeRadius: 0
+--- !u!114 &3101261113786124965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786711857362021952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -3.9717593, y: -1.1688153, z: 0}
+  - {x: 3.1095295, y: -1.1658704, z: 0}
+  - {x: 3.094554, y: 1.2658656, z: 0}
+  - {x: -3.9981995, y: 1.2726941, z: 0}
+  m_ShapePathHash: -278693269
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 74484
 --- !u!1 &8643907408037099226
 GameObject:
   m_ObjectHideFlags: 0

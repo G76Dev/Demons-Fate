@@ -76,10 +76,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,6 +123,7 @@ GameObject:
   - component: {fileID: 5327250650364191404}
   - component: {fileID: 6723486732944007841}
   - component: {fileID: 1831367883761875616}
+  - component: {fileID: 6549768725470336608}
   m_Layer: 0
   m_Name: Wall (12)
   m_TagString: Wall
@@ -157,10 +159,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -218,6 +221,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.85, y: 1.3859873}
   m_EdgeRadius: 0
+--- !u!114 &6549768725470336608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550246678468004350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -7.879115, y: -1.1247963, z: 0}
+  - {x: 7.887327, y: -1.1299024, z: 0}
+  - {x: 7.9340186, y: 1.3192086, z: 0}
+  - {x: -7.879115, y: 1.2399217, z: 0}
+  m_ShapePathHash: -1113466924
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 62826
 --- !u!1 &3188057059837050310
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +258,7 @@ GameObject:
   - component: {fileID: 8844719171814525353}
   - component: {fileID: 7566012341217004983}
   - component: {fileID: 4633564142842493288}
+  - component: {fileID: 1576639634190200055}
   m_Layer: 0
   m_Name: Wall (13)
   m_TagString: Wall
@@ -264,10 +294,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -325,6 +356,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.0629797, y: 0.5884048}
   m_EdgeRadius: 0
+--- !u!114 &1576639634190200055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188057059837050310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -3.5133996, y: -0.41101965, z: 0}
+  - {x: 3.5449595, y: -0.39310038, z: 0}
+  - {x: 3.5449579, y: 0.37518114, z: 0}
+  - {x: -3.5134, y: 0.41101933, z: 0}
+  m_ShapePathHash: 1427587660
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 66960
 --- !u!1 &4754182802797094184
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,10 +459,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -599,6 +657,7 @@ GameObject:
   - component: {fileID: 910844869286974992}
   - component: {fileID: 6046564828571322094}
   - component: {fileID: 9018859439730606979}
+  - component: {fileID: 8127891905231052114}
   m_Layer: 0
   m_Name: Wall (14)
   m_TagString: Wall
@@ -634,10 +693,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -695,6 +755,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.0629797, y: 0.5667776}
   m_EdgeRadius: 0
+--- !u!114 &8127891905231052114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6734050157770539868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -3.5133996, y: -0.41101965, z: 0}
+  - {x: 3.5449595, y: -0.39310038, z: 0}
+  - {x: 3.5449579, y: 0.37518114, z: 0}
+  - {x: -3.5134, y: 0.41101933, z: 0}
+  m_ShapePathHash: 1427587660
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 67014
 --- !u!1 &8305316078132221927
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,10 +912,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
