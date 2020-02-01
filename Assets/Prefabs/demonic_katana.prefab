@@ -144,3 +144,4 @@ MonoBehaviour:
   knockback: 0.2
   cooldown: 0.15
   thrust: 0.3
+  bulletInterac: 1

@@ -86,12 +86,10 @@ public class PlayerController : MonoBehaviour
     private void pushPlayer()
     {
         //canMove = false;
-        rb.velocity = new Vector2(0,0);
-        this.transform.SetPositionAndRotation(new Vector3(this.transform.position.x + mouseVector.x * thrust, this.transform.position.y + mouseVector.y * thrust),this.transform.rotation);
-
-        //ASStartCoroutine(stopWhileAttacking(melee.getSlashDuration())); //Obtiene la longitud de la animacion del ataque del script de melee, 
-        //y hace que el jugador no se pueda mover durante ese periodo de tiempo
-        Debug.Log("push realizado");
+        //rb.velocity = new Vector2(0,0);
+        //this.transform.SetPositionAndRotation(new Vector3(this.transform.position.x + mouseVector.x * thrust, this.transform.position.y + mouseVector.y * thrust),this.transform.rotation);
+        knockback = new Vector3(mouseVector.normalized.x * thrust/6, mouseVector.normalized.y * thrust/6, 0);
+        //Debug.Log("push realizado");
     }
 
     public void knockBackPlayer(Vector2 dir, float force)
