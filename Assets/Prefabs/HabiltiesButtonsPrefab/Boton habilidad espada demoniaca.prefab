@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -569.00006, y: -308.4952}
-  m_SizeDelta: {x: -1603.5, y: -752.7}
+  m_AnchoredPosition: {x: -562.64, y: -308.4952}
+  m_SizeDelta: {x: -1409.16, y: -752.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &233793846188718884
 CanvasRenderer:
@@ -65,20 +65,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_Font: {fileID: 12800000, guid: a1b9ed4547790d247a4ec7552ef2d1ee, type: 3}
+    m_FontSize: 22
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Habilidad profana: tu espada adquiere el poder de los demonios, volvi\xE9ndose
-    m\xE1s r\xE1pida y letal."
+  m_Text: "Muramasa: \nThis cursed katana is always blood thirsty, making its wielder
+    as well.\nYour attacks will be much quicker and powerfull."
 --- !u!1 &233793847105642641
 GameObject:
   m_ObjectHideFlags: 0

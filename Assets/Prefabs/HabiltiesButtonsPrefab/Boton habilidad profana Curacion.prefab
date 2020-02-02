@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -569.00006, y: -308.4952}
-  m_SizeDelta: {x: -1603.5, y: -752.7}
+  m_AnchoredPosition: {x: -562.42, y: -308.4952}
+  m_SizeDelta: {x: -1402.33, y: -752.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &233793846188718884
 CanvasRenderer:
@@ -65,20 +65,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_Font: {fileID: 12800000, guid: a1b9ed4547790d247a4ec7552ef2d1ee, type: 3}
+    m_FontSize: 22
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Habilidad profana: Tu vida m\xE1xima aumenta en 2 unidades (un coraz\xF3n
-    entero) y adem\xE1s te regeneras toda la salud."
+  m_Text: 'Unholy Blood Transfusion:
+
+    In a search of more power, or in a moment
+    of weakness, you decide to transfuse this unholy blood into your body.
+
+    You
+    recover all health, gaining one more extra complete unit in the process.'
 --- !u!1 &233793847105642641
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +151,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b292625edde7bcf4abe8f4a9568a0760, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e94ac66d3b0959447b85ca6d1146e8b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

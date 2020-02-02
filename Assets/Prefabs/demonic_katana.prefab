@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   knockback: 0.1
-  cooldown: 0.15
+  cooldown: 0.1
   thrust: 0.3
   postMeleeCd: 0.5
   bulletInterac: 1
