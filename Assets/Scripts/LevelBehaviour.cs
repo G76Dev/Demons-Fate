@@ -27,10 +27,12 @@ public class LevelBehaviour : MonoBehaviour
     {
         DontDestroyOnLoad(this);
 
+        /* Cheats
         if (Input.GetKeyDown(KeyCode.P))
         {
             habilitiesSelector();
         }
+        */
 
         HSCanvas = GameObject.Find("HabilitesSelectorBackground");
         hability1 = GameObject.Find("hability 1 text");
