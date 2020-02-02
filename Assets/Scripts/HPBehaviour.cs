@@ -18,7 +18,7 @@ public class HPBehaviour : MonoBehaviour
 
     private List<GameObject> hearts;
 
-    bool firstTime=false;
+    bool firstTime = false;
 
     public int maxHP;
     public int actualHP;
@@ -45,13 +45,13 @@ public class HPBehaviour : MonoBehaviour
 
         for (int i = 0; i < aux; i++)
         {
-            hearts.Add(Instantiate(imagen, targetPoint.position + Vector3.right*distanciaEntreCorazones*i, Quaternion.identity, GameObject.Find("Canvas").transform));
+            hearts.Add(Instantiate(imagen, targetPoint.position + Vector3.right * distanciaEntreCorazones * i, Quaternion.identity, GameObject.Find("Canvas").transform));
             hearts[i].GetComponent<RectTransform>().localPosition.Set(targetPoint.position.x + i * distanciaEntreCorazones, targetPoint.position.y, targetPoint.position.z);
             hearts[i].GetComponent<Image>().sprite = heart;
         }
         if (actualHP % 2 == 1)
         {
-            hearts.Add(Instantiate(imagen, targetPoint.position + Vector3.right*distanciaEntreCorazones*aux, Quaternion.identity, GameObject.Find("Canvas").transform));
+            hearts.Add(Instantiate(imagen, targetPoint.position + Vector3.right * distanciaEntreCorazones * aux, Quaternion.identity, GameObject.Find("Canvas").transform));
             hearts[aux].GetComponent<RectTransform>().localPosition.Set(targetPoint.position.x + aux * distanciaEntreCorazones, targetPoint.position.y, targetPoint.position.z);
             hearts[aux].GetComponent<Image>().sprite = halfheart;
         }
@@ -92,7 +92,7 @@ public class HPBehaviour : MonoBehaviour
         recalculateHP();
         Destroy(Instantiate(HitFX, this.transform.position, Quaternion.identity), 2);
     }
-    public void damage(int amount,float force, GameObject inflictor)
+    public void damage(int amount, float force, GameObject inflictor)
     {
 
         if (vulnerable)
@@ -117,7 +117,7 @@ public class HPBehaviour : MonoBehaviour
         {
             sr.color = new Color(originalTint.r, originalTint.g, originalTint.b, 1);
         }
-        else{
+        else {
             StartCoroutine(blinking2());
         }
     }
@@ -146,15 +146,36 @@ public class HPBehaviour : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("dmgObstacle"))
-        {
-            damage(1, 0.4f, collision.gameObject);
-        }
-    }*/
 
-    private void die()
+        if (collision.gameObject.tag == "HP")
+        {
+            if (actualHP < maxHP)
+            {
+                //audioSource.PlayOneShot(audioClip);
+
+                actualHP += 2;
+                if (actualHP > maxHP)
+                {
+                    actualHP = maxHP;
+                }
+                recalculateHP();
+                Debug.Log("Dentro del corazon");
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+
+            /*private void OnTriggerEnter2D(Collider2D collision)
+            {
+                if (collision.CompareTag("dmgObstacle"))
+                {
+                    damage(1, 0.4f, collision.gameObject);
+                }
+            }*/
+
+            private void die()
     {
         audioSource.PlayOneShot(death);
         //programar lo que sea que ocurre cuando se muere. Por ejemplo, se podría poner el timescale a 0, y mostrar por pantalla un texto de derrota, 
@@ -162,6 +183,6 @@ public class HPBehaviour : MonoBehaviour
         Debug.Log("Muerte");
         Time.timeScale = 0;
         GameObject.Find("Death background").GetComponent<Animator>().Play("HSIn");
-        Destroy(gameObject,3);
+        Destroy(gameObject,0.01f);
     }
 }

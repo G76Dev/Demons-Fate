@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4407354559033707382}
   - component: {fileID: 4407354559033707383}
+  - component: {fileID: -8582063838154129105}
   m_Layer: 0
   m_Name: centralShooters
   m_TagString: Untagged
@@ -49,6 +50,18 @@ MonoBehaviour:
   objId: 5
   dimSize: 52
   move: 1
+--- !u!114 &-8582063838154129105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4407354559033707380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660bec803f9108947a7476756b5aa35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4407354559435750212
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +258,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4407354559033707382}
     m_Modifications:
+    - target: {fileID: 481658505661653374, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4142889663103871611, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
       propertyPath: m_Name
@@ -263,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 4142889663103871612, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
       propertyPath: shootingTime
-      value: 0.6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4142889663103871613, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
@@ -360,6 +378,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4407354559033707382}
     m_Modifications:
+    - target: {fileID: 481658505661653374, guid: bab3f8a43bbacd64e99ef76ddabca59d,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4142889663103871611, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
       propertyPath: m_Name
@@ -378,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 4142889663103871612, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}
       propertyPath: shootingTime
-      value: 0.6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4142889663103871613, guid: bab3f8a43bbacd64e99ef76ddabca59d,
         type: 3}

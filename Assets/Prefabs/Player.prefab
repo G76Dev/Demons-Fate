@@ -92,7 +92,7 @@ MonoBehaviour:
   step: {fileID: 8300000, guid: e68a577c55287d14ebab820b2a693573, type: 3}
   speed: 7.5
   weaponDistance: 1.15
-  bladeDistance: 1.5
+  bladeDistance: 2
   weapon: {fileID: 1913787927300787823}
   blade: {fileID: 1913787925492368054}
   mouseVector: {x: 0, y: 0, z: 0}
@@ -383,7 +383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6519436060300772814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -0.8, z: 0}
+  m_LocalPosition: {x: 0.02, y: -0.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2855001974512527398}

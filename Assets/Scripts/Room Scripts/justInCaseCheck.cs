@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class justInCaseCheck : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void deleteCentral(Vector2Int pos)
     {
-        if (collision.CompareTag("Block"))
-        {
-            Destroy(collision.gameObject);
-        }
+        if(pos.x == gameObject.transform.position.x && pos.y == gameObject.transform.position.y)
+        Destroy(gameObject);
     }
+
 }

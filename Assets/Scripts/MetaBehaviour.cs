@@ -8,6 +8,12 @@ public class MetaBehaviour : MonoBehaviour
     public bool enemysKilled = false;
     [SerializeField] Sprite metaSprite;
 
+
+    private void Start()
+    {
+        GameObject.Find("RoomController").GetComponentInChildren<justInCaseCheck>().deleteCentral(new Vector2Int((int)this.transform.position.x, (int)this.transform.position.y));
+    }
+
     private void Update()
     {
         if (enemysKilled)
