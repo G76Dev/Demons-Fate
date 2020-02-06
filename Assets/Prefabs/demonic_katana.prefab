@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7dc9d3b82a59784a9e4980c00bb8ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 35
   knockback: 0.1
-  cooldown: 0.1
+  cooldown: 0.3
   thrust: 0.3
   postMeleeCd: 0.5
-  bulletInterac: 1
+  bulletInterac: 0

@@ -29,8 +29,14 @@ public class meleeController : MonoBehaviour
     {
         canAttack = true;
         slashDirection = true;
-        slashCooldown = weaponPrefab.GetComponent<slashBehaviour>().getCooldown();
+        AssignCoolDown();
         defaultSword = weaponPrefab;
+    }
+
+    public void AssignCoolDown()
+    {
+        //Cooldown asignado
+        slashCooldown = weaponPrefab.GetComponent<slashBehaviour>().getCooldown();
     }
 
     // Update is called once per frame
@@ -44,22 +50,26 @@ public class meleeController : MonoBehaviour
         if(playerController.DemonicSword)
         {
             weaponPrefab = demonicSwordWeapon;
+            AssignCoolDown();
             auxDem = true;
         }
         if (playerController.SacredSword)
         {
             auxSac = true;
             weaponPrefab = sacredSwordHability;
+            AssignCoolDown();
         }
         if (playerController.eliminateDemonic && weaponPrefab.Equals(demonicSwordWeapon))
         {
             if (auxSac)
             {
                 weaponPrefab = sacredSwordHability;
+                AssignCoolDown();
             }
             else
             {
                 weaponPrefab = defaultSword;
+                AssignCoolDown();
             }
         }
 

@@ -23,7 +23,7 @@ public class shootingController : MonoBehaviour
     private GameObject defaultBullet;
 
     Quaternion d1 = Quaternion.Euler(new Vector3(0, 0, 15));
-    Quaternion d2 = Quaternion.Euler(new Vector3(0, 0, 30));
+    Quaternion d2 = Quaternion.Euler(new Vector3(0, 0, 5));
     Quaternion d3 = Quaternion.Euler(new Vector3(0, 0, 45));
     Quaternion d4 = Quaternion.Euler(new Vector3(0, 0, -15));
     Quaternion d5 = Quaternion.Euler(new Vector3(0, 0, -30));

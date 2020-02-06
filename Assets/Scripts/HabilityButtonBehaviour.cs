@@ -136,6 +136,7 @@ public class HabilityButtonBehaviour : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerController>().SacredShooter = true;
         player.GetComponent<PlayerController>().DemonicShooter = false;
+
     }
 
     public void nonDemonicHabilities()
